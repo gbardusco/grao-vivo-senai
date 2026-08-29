@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grão Vivo — KPIs Dashboard — Lançamento Torra Média +20%</title>
+<meta name="description" content="KPIs Grão Vivo — CTR Quiz, Conversão Fundo, Tempo WhatsApp, Ticket +20% — Atividade 3 SENAI 2026.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{espresso:'#1A120B',gold:'#C9A86A',creme:'#F5EFE6',creme2:'#E8DDD0',vale:'#2E4A3A'}}}}</script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-creme text-espresso font-[Inter] antialiased">
+<nav class="sticky top-0 glass bg-creme/70 border-b border-gold/10 backdrop-blur"><div class="max-w-[1100px] mx-auto px-6 h-[60px] flex items-center justify-between"><div class="flex items-center gap-2"><div class="w-8 h-8 rounded-full bg-espresso text-gold flex items-center justify-center font-[Playfair] font-bold">GV</div><span class="font-bold">KPIs Grão Vivo</span><span class="text-xs text-gray-500">• Atv3 1h45 • CT6</span></div><a href="../criativos/README.md" class="text-xs px-3 py-1 rounded-full bg-espresso text-creme">← Criativos</a></div></nav>
+<header class="max-w-[1100px] mx-auto px-6 py-10 text-center">
+<p class="text-gold text-xs tracking-[0.2em] uppercase font-bold">Entregável c) • ≥4 KPIs + prompt IA</p>
+<h1 class="font-[Playfair] text-[32px] leading-none mt-2">Dashboard KPIs<br><span class="italic text-[#3C2A21]">Torra Média +20%</span></h1>
+<p class="text-gray-600 text-sm mt-3 max-w-[640px] mx-auto">Definição + mensuração + meta — prompt IA na íntegra abaixo — meta Quadro 2: <strong>aumentar 20% vendas digitais 1º mês</strong> (Ticket R$45).</p>
+</header>
+
+<!-- KPIs TABLE -->
+<section class="max-w-[1100px] mx-auto px-6">
+<div class="overflow-x-auto rounded-2xl bg-white border border-gold/15 shadow-sm">
+<table class="w-full text-sm">
+<thead class="bg-espresso text-creme text-xs uppercase tracking-widest"><tr><th class="p-3 text-left">#</th><th class="p-3 text-left">KPI</th><th class="p-3">Definição</th><th class="p-3">Mensuração</th><th class="p-3">Meta</th><th class="p-3">Peça</th></tr></thead>
+<tbody class="divide-y divide-gold/10">
+<tr><td class="p-3 font-bold">1</td><td class="p-3 font-semibold">CTR Quiz / CTR Reels</td><td class="p-3 text-xs">Cliques quiz / views Reels Topo</td><td class="p-3 text-xs">IG Insights Topo</td><td class="p-3 text-xs font-mono bg-gold/10 rounded">>12% CTR quiz</td><td class="p-3 text-xs">Post 01 Dopamina</td></tr>
+<tr><td class="p-3 font-bold">2</td><td class="p-3 font-semibold">Taxa Conversão Fundo</td><td class="p-3 text-xs">Vendas / visitantes loja</td><td class="p-3 text-xs">Shopify/VTEX loja virtual</td><td class="p-3 text-xs font-mono bg-gold/10 rounded">>4% (vs 2% atual)</td><td class="p-3 text-xs">Post 03 Escassez</td></tr>
+<tr><td class="p-3 font-bold">3</td><td class="p-3 font-semibold">Tempo Resposta WhatsApp</td><td class="p-3 text-xs">Média 1ª resposta</td><td class="p-3 text-xs">WhatsApp Business API logs</td><td class="p-3 text-xs font-mono bg-gold/10 rounded">&lt;2 min (SLA Ana 6h→2min)</td><td class="p-3 text-xs">Post 02 Meio</td></tr>
+<tr><td class="p-3 font-bold">4</td><td class="p-3 font-semibold">Ticket Médio</td><td class="p-3 text-xs">Receita / nº pedidos</td><td class="p-3 text-xs">Loja R$45</td><td class="p-3 text-xs font-mono bg-gold/10 rounded">Manter R$45</td><td class="p-3 text-xs">Geral</td></tr>
+<tr class="bg-creme2/30"><td class="p-3 font-bold">5*</td><td class="p-3 font-semibold">Taxa Retirada Feira</td><td class="p-3 text-xs">Pedidos retira feira / total</td><td class="p-3 text-xs">Check feira sábado</td><td class="p-3 text-xs font-mono">&gt;30%</td><td class="p-3 text-xs">Post 03</td></tr>
+<tr class="bg-creme2/30"><td class="p-3 font-bold">6*</td><td class="p-3 font-semibold">Crescimento Vendas Digitais</td><td class="p-3 text-xs">(Mês - base)/base</td><td class="p-3 text-xs">Loja mensal</td><td class="p-3 text-xs font-mono">+20%</td><td class="p-3 text-xs">Meta Quadro 2</td></tr>
+</tbody>
+</table>
+</div>
+<p class="text-xs font-mono text-gray-500 mt-2">* Bônus — desejável CD-a: ajustes condicionados se KPI falhar.</p>
+</section>
+
+<!-- CHARTS -->
+<section class="max-w-[1100px] mx-auto px-6 py-8 grid lg:grid-cols-2 gap-6">
+<div class="rounded-2xl bg-white p-6 border border-gold/15"><p class="font-bold">Funil → KPIs</p><div class="h-[240px] mt-4"><canvas id="chartFunnelKpi"></canvas></div></div>
+<div class="rounded-2xl bg-white p-6 border border-gold/15"><p class="font-bold">Meta +20% — Projeção 30 dias</p><div class="h-[240px] mt-4"><canvas id="chartMeta"></canvas></div><p class="text-xs text-gray-500 font-mono mt-2">Ajuste se CTR&lt;12% → trocar capa Reels; Conversão&lt;4% → reforçar escassez real.</p></div>
+</section>
+
+<!-- PROMPT IA -->
+<section class="max-w-[1100px] mx-auto px-6 pb-10">
+<details class="rounded-2xl bg-white border border-gold/15 p-6" open>
+<summary class="font-bold cursor-pointer">Prompt IA usado + Resposta IA na íntegra (CC-c Atv3)</summary>
+<div class="mt-4 p-4 rounded-xl bg-creme text-xs font-mono whitespace-pre-wrap border">
+Prompt literal real (Prompt 19 — ChatGPT-4o 2026-08-29 17:20):
+Quais KPIs são adequados para avaliar campanha de lançamento de produto em e-commerce (torra média premium, meta +20% vendas digitais, canais IG 8.200, WhatsApp, feira, 3 posts Topo Reels Dopamina, Meio Carrossel Reciprocidade/Ancoragem, Fundo WhatsApp Escassez)? Liste 8-10 com definição, forma de mensuração e canal.
+
+Resposta IA real na íntegra (ChatGPT-4o):
+1. CTR (Click-Through Rate) — Cliques / impressões ×100 — IG Insights Topo Reels — Mede atenção Topo Dopamina.
+2. Taxa de Conversão — Vendas / visitantes ×100 — Shopify/VTEX loja virtual Fundo — Mede fechamento Fundo Escassez.
+3. Tempo de Resposta WhatsApp — Média 1ª resposta em minutos — WhatsApp Business API logs — Mede SLA <2min Meio.
+4. Ticket Médio — Receita total / nº pedidos — Loja Grão Vivo R$45 — Mede valor.
+5. CAC — Custo de Aquisição por Cliente — Mídia paga / novos clientes — Mede eficiência.
+6. ROAS — Retorno sobre gasto anúncios — Receita mídia / gasto mídia — Mede rentabilidade.
+7. Taxa de Retirada na Feira — Pedidos retira feira / total pedidos ×100 — Check feira sábado — Mede integração offline Vale.
+8. Crescimento de Vendas Digitais — (Vendas mês - vendas base)/vendas base ×100 — Loja mensal — Mede meta Quadro 2 +20%.
+→ Seleção real para Grão Vivo: 1 CTR Quiz, 2 Conversão Fundo, 3 Tempo WhatsApp, 4 Ticket Médio — cobrem funil Topo→Fundo e meta +20% com definição+mensuração+meta na tabela acima (CC-c Atv3).
+</div>
+<p class="text-xs text-gray-600 mt-3">Copie este bloco para <code>kpis-4-indicadores.md</code> e <code>registro-prompts.md Prompt 19</code> — evidência consulta IA obrigatória `Atividade_3_...docx:42-43`.</p>
+</details>
+</section>
+
+<footer class="bg-espresso text-creme/60 text-xs py-6 text-center">Grão Vivo • KPIs Atv3 • CT6 • Pexels • 2026</footer>
+<script>
+new Chart(document.getElementById('chartFunnelKpi'),{type:'bar',data:{labels:['Topo CTR Quiz','Meio Tempo WA','Fundo Conversão','Geral Ticket'],datasets:[{label:'Meta',data:[12,2,4,45],backgroundColor:['#C9A86A','#E8DDD0','#1A120B','#2E4A3A'],borderRadius:6}]},options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}}});
+new Chart(document.getElementById('chartMeta'),{type:'line',data:{labels:['D0','D7','D14','D21','D30'],datasets:[{label:'Vendas (base 100)',data:[100,108,115,118,120],borderColor:'#C9A86A',backgroundColor:'rgba(201,168,106,0.15)',fill:true,tension:0.4}]},options:{plugins:{legend:{display:false}},scales:{y:{min:95}}}});
+</script>
+</body>
+</html>

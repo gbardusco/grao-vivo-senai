@@ -1,14 +1,1295 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=analisepublico.html">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Redirecionando — Grão Vivo</title>
-<link rel="canonical" href="analisepublico.html">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grão Vivo — Compilado Geral de Consultoria com IA (Atividades 1, 2 e 3) | SENAI-SP</title>
+  <meta name="description" content="Projeto integrado de Marketing Digital com Inteligência Artificial para a Grão Vivo — Personas, Jornada, Neuromarketing (S1/S2), Calendário, Criativos, KPIs e Ética.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            espresso: '#1A120B',
+            mocha: '#3C2A21',
+            caramel: '#D5A373',
+            gold: '#C9A86A',
+            goldLight: '#E8D5B5',
+            creme: '#F5EFE6',
+            creme2: '#E8DDD0',
+            vale: '#2E4A3A',
+            valeLight: '#E2ECE6',
+          },
+          fontFamily: {
+            playfair: ['Playfair Display', 'serif'],
+            inter: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- AOS CSS & JS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <style>
+    .glass { backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); }
+    .gold-border { border: 1px solid rgba(201,168,106,0.22); }
+    .hero-overlay { background: linear-gradient(180deg, rgba(26,18,11,0.65) 0%, rgba(26,18,11,0.88) 70%, #1A120B 100%); }
+    .creme-glow { box-shadow: 0 20px 50px rgba(60,42,33,0.06); }
+    .ticker { animation: ticker 35s linear infinite; }
+    @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-thumb { background: #C9A86A; border-radius: 999px; }
+    ::-webkit-scrollbar-track { background: #F5EFE6; }
+    ::selection { background: rgba(201,168,106,0.35); color: #1A120B; }
+    .tab-btn.active { background-color: #1A120B; color: #F5EFE6; border-color: #C9A86A; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+  </style>
 </head>
-<body style="font-family:Inter, sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; background:#F5EFE6; color:#1A120B;">
-  <p>Redirecionando para <a href="analisepublico.html" style="color:#C9A86A; font-weight:600;">analisepublico.html</a> — Grão Vivo • SENAI 2026</p>
-  <script>location.replace('analisepublico.html');</script>
+<body class="bg-creme text-espresso font-inter antialiased selection:bg-gold/30">
+
+  <!-- BARRA DE PROGRESSO DO SCROLL -->
+  <div class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-gold via-caramel to-gold z-[70]" id="progressBar" style="width: 0%;"></div>
+
+  <!-- NAVBAR SUPERIOR -->
+  <nav class="fixed top-0 w-full z-50 glass bg-creme/85 border-b border-gold/15 transition-all duration-300">
+    <div class="max-w-[1360px] mx-auto px-6 h-[68px] flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-espresso text-gold flex items-center justify-center font-playfair font-bold text-lg border border-gold/30 shadow-sm">GV</div>
+        <div>
+          <p class="font-playfair font-bold text-espresso leading-none text-base">Grão Vivo <span class="text-gold italic font-normal text-sm">• Café Especial</span></p>
+          <p class="text-[10px] tracking-[0.2em] text-mocha/70 uppercase font-semibold">Consultoria 360° com IA • SENAI-SP</p>
+        </div>
+      </div>
+
+      <!-- Links de Navegação -->
+      <div class="hidden lg:flex items-center gap-6 text-xs font-medium uppercase tracking-wider text-mocha">
+        <a href="#diagnostico" class="hover:text-gold transition">Diagnóstico</a>
+        <a href="#atv1" class="hover:text-gold transition flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-gold"></span> Atv 1: Personas</a>
+        <a href="#atv2" class="hover:text-gold transition flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-caramel"></span> Atv 2: Neuromarketing</a>
+        <a href="#atv3" class="hover:text-gold transition flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-vale"></span> Atv 3: Criativos & KPIs</a>
+        <a href="#reflexao" class="hover:text-gold transition">Reflexão</a>
+      </div>
+
+      <!-- Botões de Ação -->
+      <div class="flex items-center gap-3">
+        <button onclick="document.getElementById('promptsModal').showModal()" class="px-4 py-2 rounded-full bg-espresso text-creme hover:bg-mocha text-xs font-semibold tracking-wider uppercase border border-gold/30 shadow transition flex items-center gap-2">
+          <span>⚡ Registro de Prompts</span>
+          <span class="px-1.5 py-0.5 rounded-full bg-gold text-espresso text-[10px] font-bold">20</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO PRINCIPAL -->
+  <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-[80px] bg-espresso">
+    <img src="https://images.pexels.com/photos/6802983/pexels-photo-6802983.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Grão Vivo Cafeteria e Grãos Especiais" class="absolute inset-0 w-full h-full object-cover opacity-35 scale-105 transition duration-1000">
+    <div class="absolute inset-0 hero-overlay"></div>
+
+    <div class="relative max-w-[1280px] mx-auto px-6 py-20 text-center z-10">
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-creme/10 border border-gold/30 text-gold text-xs tracking-widest uppercase glass mb-6" data-aos="fade-down">
+        <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+        Compilado Executivo de Marketing Digital com Inteligência Artificial
+      </div>
+
+      <h1 class="font-playfair font-black text-creme text-4xl sm:text-5xl lg:text-6xl leading-[1.08] tracking-tight max-w-[1000px] mx-auto" data-aos="fade-up">
+        Da Pesquisa de Personas ao Neuromarketing e Mensuração com IA
+      </h1>
+
+      <p class="text-creme/80 text-base sm:text-lg max-w-[780px] mx-auto mt-6 leading-relaxed font-light" data-aos="fade-up" data-aos-delay="100">
+        Estratégia completa de lançamento para a <strong class="text-creme font-semibold">Torra Média Especial Grão Vivo</strong> (Vale do Ribeira). Unificando análise de dados, ativação cognitiva do Sistema 1 (S1/S2), criativos com apelo sensorial e dashboard de KPIs orientado à meta de <strong class="text-gold font-semibold">+20% de vendas digitais</strong>.
+      </p>
+
+      <!-- Badges de Capacidades e Métricas -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-[920px] mx-auto mt-12" data-aos="fade-up" data-aos-delay="200">
+        <div class="p-4 rounded-2xl bg-creme/5 border border-gold/20 glass text-left">
+          <p class="text-gold text-xs uppercase tracking-widest font-mono">Público Atual</p>
+          <p class="text-2xl font-bold text-creme mt-1 font-playfair">8.200</p>
+          <p class="text-[11px] text-creme/60 mt-0.5">Seguidores Instagram (60% tráfego frio)</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-creme/5 border border-gold/20 glass text-left">
+          <p class="text-gold text-xs uppercase tracking-widest font-mono">Ticket Médio</p>
+          <p class="text-2xl font-bold text-creme mt-1 font-playfair">R$ 45,00</p>
+          <p class="text-[11px] text-creme/60 mt-0.5">Pacote 250g torra média premium</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-creme/5 border border-gold/20 glass text-left">
+          <p class="text-gold text-xs uppercase tracking-widest font-mono">Ativação Mental</p>
+          <p class="text-2xl font-bold text-creme mt-1 font-playfair">7 Gatilhos</p>
+          <p class="text-[11px] text-creme/60 mt-0.5">Dopamina, Prova Social, Ancoragem, Escassez</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-creme/5 border border-gold/20 glass text-left">
+          <p class="text-gold text-xs uppercase tracking-widest font-mono">Meta de Vendas</p>
+          <p class="text-2xl font-bold text-creme mt-1 font-playfair">+20%</p>
+          <p class="text-[11px] text-creme/60 mt-0.5">Crescimento digital em 30 dias</p>
+        </div>
+      </div>
+
+      <!-- Botões de Navegação Rápida -->
+      <div class="flex flex-wrap items-center justify-center gap-4 mt-10" data-aos="fade-up" data-aos-delay="300">
+        <a href="#atv1" class="px-8 py-3.5 rounded-full bg-gold text-espresso font-bold hover:bg-caramel transition shadow-lg text-xs uppercase tracking-wider">
+          Explorar Atividade 1 (Personas) →
+        </a>
+        <a href="#atv2" class="px-8 py-3.5 rounded-full bg-creme/10 text-creme hover:bg-creme/20 transition glass gold-border text-xs uppercase tracking-wider">
+          Explorar Atividade 2 (Gatilhos)
+        </a>
+        <a href="#atv3" class="px-8 py-3.5 rounded-full bg-vale text-creme hover:bg-opacity-90 transition text-xs uppercase tracking-wider">
+          Explorar Atividade 3 (Criativos & KPIs)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER DE CONCEITOS -->
+  <div class="bg-espresso text-creme/80 overflow-hidden border-y border-gold/20">
+    <div class="flex ticker whitespace-nowrap py-3 text-xs tracking-wider uppercase font-mono">
+      <span class="mx-6">☕ Ana Clara (34 anos) — Curadoria & SLA &lt;2min</span><span class="text-gold">•</span>
+      <span class="mx-6">📊 Rafael Moura (38 anos) — Comparador de Valor & Prova Social</span><span class="text-gold">•</span>
+      <span class="mx-6">🧠 Neuromarketing: Ativação do Sistema 1 (Emoção) vs Sistema 2 (Cálculo)</span><span class="text-gold">•</span>
+      <span class="mx-6">🎯 3 Peças: Reels Topo, Carrossel Meio, WhatsApp/Feira Fundo</span><span class="text-gold">•</span>
+      <span class="mx-6">📈 4 KPIs: CTR Quiz &gt;12%, SLA WA &lt;2min, Conversão &gt;4%, Ticket R$45</span><span class="text-gold">•</span>
+      <span class="mx-6">⚖️ Ética em IA: Transparência, Direitos Autorais e Verificação Humana</span><span class="text-gold">•</span>
+    </div>
+  </div>
+
+  <!-- SEÇÃO DIAGNÓSTICO DO CASO GRÃO VIVO -->
+  <section id="diagnostico" class="max-w-[1280px] mx-auto px-6 py-20">
+    <div class="text-center max-w-[800px] mx-auto" data-aos="fade-up">
+      <p class="text-gold text-xs tracking-[0.25em] uppercase font-bold font-mono">Situação-Problema • Quadro 2</p>
+      <h2 class="font-playfair text-3xl sm:text-4xl text-espresso font-bold mt-2">Diagnóstico da Grão Vivo</h2>
+      <p class="text-mocha/80 text-sm sm:text-base mt-3 leading-relaxed">
+        Pequena torrefação e cafeteria artesanal em Registro (Vale do Ribeira/SP). A marca possui 8.200 seguidores no Instagram, mas enfrentava 3 gargalos críticos antes da consultoria.
+      </p>
+    </div>
+
+    <!-- 3 Cards de Gargalos Identificados -->
+    <div class="grid md:grid-cols-3 gap-6 mt-12" data-aos="fade-up" data-aos-delay="100">
+      <div class="p-6 rounded-2xl bg-white gold-border creme-glow">
+        <div class="w-10 h-10 rounded-xl bg-gold/15 text-gold flex items-center justify-center font-mono font-bold text-lg mb-4">01</div>
+        <h3 class="font-playfair font-bold text-lg text-espresso">Paralisia de Escolha (60% Frio)</h3>
+        <p class="text-mocha/70 text-xs sm:text-sm mt-2 leading-relaxed">
+          Seguidores entram no perfil mas desistem na hora de comprar por não entenderem notas sensoriais complexas e termos excessivamente técnicos.
+        </p>
+        <div class="mt-4 pt-4 border-t border-gold/10 text-xs font-mono text-gold font-semibold">
+          Antídoto: Quiz 30s + Dopamina S1
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-white gold-border creme-glow">
+        <div class="w-10 h-10 rounded-xl bg-gold/15 text-gold flex items-center justify-center font-mono font-bold text-lg mb-4">02</div>
+        <h3 class="font-playfair font-bold text-lg text-espresso">Resistência ao Preço (R$ 45 vs R$ 38)</h3>
+        <p class="text-mocha/70 text-xs sm:text-sm mt-2 leading-relaxed">
+          Consumidores comparavam o café especial com cafés de mercado sem perceber a diferença de frescor da torra e origem artesanal.
+        </p>
+        <div class="mt-4 pt-4 border-t border-gold/10 text-xs font-mono text-gold font-semibold">
+          Antídoto: Ancoragem de Preço + Prova Social 4.8⭐
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-white gold-border creme-glow">
+        <div class="w-10 h-10 rounded-xl bg-gold/15 text-gold flex items-center justify-center font-mono font-bold text-lg mb-4">03</div>
+        <h3 class="font-playfair font-bold text-lg text-espresso">Demora no WhatsApp (SLA de 6 Horas)</h3>
+        <p class="text-mocha/70 text-xs sm:text-sm mt-2 leading-relaxed">
+          Clientes tiravam dúvidas no WhatsApp mas esfriavam antes de receber resposta humana manual, gerando alto abandono de carrinho.
+        </p>
+        <div class="mt-4 pt-4 border-t border-gold/10 text-xs font-mono text-gold font-semibold">
+          Antídoto: Chatbot NLP Automatizado (&lt;2 min)
+        </div>
+      </div>
+    </div>
+
+    <!-- Gráficos de Apoio -->
+    <div class="grid lg:grid-cols-2 gap-8 mt-10">
+      <div class="p-6 rounded-2xl bg-white gold-border creme-glow">
+        <h4 class="font-playfair font-bold text-base text-espresso">Composição da Audiência & Tráfego</h4>
+        <div class="h-[220px] mt-4 flex items-center justify-center">
+          <canvas id="chartAudience"></canvas>
+        </div>
+        <p class="text-[11px] text-mocha/60 text-center mt-2 font-mono">60% tráfego frio indeciso necessita de baixa fricção no Topo de Funil</p>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-white gold-border creme-glow">
+        <h4 class="font-playfair font-bold text-base text-espresso">Gargalo de Atendimento no WhatsApp</h4>
+        <div class="h-[220px] mt-4 flex items-center justify-center">
+          <canvas id="chartSla"></canvas>
+        </div>
+        <p class="text-[11px] text-mocha/60 text-center mt-2 font-mono">Redução drástica do SLA de resposta de 360 min para menos de 2 min</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- BLOCO ATIVIDADE 1: PERSONAS, JORNADAS E PERSONALIZAÇÃO COM IA -->
+  <!-- ========================================================================= -->
+  <section id="atv1" class="bg-creme2/40 border-y border-gold/15 py-20">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6" data-aos="fade-up">
+        <div>
+          <span class="px-3.5 py-1 rounded-full bg-gold/20 text-espresso text-xs uppercase tracking-widest font-mono font-bold">Atividade 1 • 08h-11h15</span>
+          <h2 class="font-playfair text-3xl sm:text-4xl font-black text-espresso mt-3">Personas, Jornada & Personalização com IA</h2>
+          <p class="text-mocha/80 text-sm max-w-[650px] mt-2">Mapeamento aprofundado das duas personas centrais a partir dos dados do Quadro 2, cobrindo o funil de compra e propostas de IA com Machine Learning.</p>
+        </div>
+        <div class="flex gap-2">
+          <span class="px-3 py-1 bg-white gold-border rounded-lg text-xs font-mono text-mocha">CC-a: 2 Personas</span>
+          <span class="px-3 py-1 bg-white gold-border rounded-lg text-xs font-mono text-mocha">CC-b: 2 Jornadas</span>
+          <span class="px-3 py-1 bg-white gold-border rounded-lg text-xs font-mono text-mocha">CC-d: ML & Dados</span>
+        </div>
+      </div>
+
+      <!-- CARDS DAS 2 PERSONAS -->
+      <div class="grid md:grid-cols-2 gap-8 mt-12">
+        <!-- Persona 1: Ana Clara -->
+        <div class="p-8 rounded-3xl bg-white gold-border creme-glow flex flex-col justify-between" data-aos="fade-right">
+          <div>
+            <div class="flex items-center gap-4">
+              <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Ana Clara Persona" class="w-16 h-16 rounded-2xl object-cover gold-border shadow-sm cursor-zoom-in hover:scale-105 transition" onclick="openLightbox(this.src, 'Persona 01: Ana Clara (34 anos)', 'A Indecisa por Curadoria • Registro/SP • Renda R$ 6.500')">
+              <div>
+                <h3 class="font-playfair font-bold text-xl text-espresso">Ana Clara, 34 anos</h3>
+                <p class="text-xs text-gold font-mono font-bold uppercase">A Indecisa por Curadoria • Registro/SP</p>
+                <p class="text-xs text-mocha/60 mt-0.5">Advogada autônoma • Renda R$ 6.500</p>
+              </div>
+            </div>
+
+            <div class="mt-6 p-4 rounded-2xl bg-creme border border-gold/10 italic text-xs text-mocha leading-relaxed">
+              "Acompanho o Instagram da Grão Vivo há meses, acho o visual lindo, mas quando vou escolher fico completamente perdida com tantas opções e notas de frutas amarelas..."
+            </div>
+
+            <div class="mt-6 space-y-3 text-xs">
+              <div class="flex justify-between py-1.5 border-b border-gold/10">
+                <span class="text-mocha/60">Dificuldade Principal:</span>
+                <span class="font-semibold text-espresso">Sobrecarga cognitiva e medo de errar a torra</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-gold/10">
+                <span class="text-mocha/60">Canal Preferido:</span>
+                <span class="font-semibold text-espresso">Instagram Stories / Reels & WhatsApp</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-gold/10">
+                <span class="text-mocha/60">Solução de IA (Atv 1):</span>
+                <span class="font-semibold text-gold">Quiz Interativo 30s + Chatbot WhatsApp NLP</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-gold/10 flex justify-between items-center text-xs font-mono">
+            <span class="text-mocha/60">Jornada: Reels → Quiz → Kit 3x50g</span>
+            <span class="text-vale font-bold">Ativação: Sistema 1</span>
+          </div>
+        </div>
+
+        <!-- Persona 2: Rafael Moura -->
+        <div class="p-8 rounded-3xl bg-white gold-border creme-glow flex flex-col justify-between" data-aos="fade-left">
+          <div>
+            <div class="flex items-center gap-4">
+              <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Rafael Moura Persona" class="w-16 h-16 rounded-2xl object-cover gold-border shadow-sm cursor-zoom-in hover:scale-105 transition" onclick="openLightbox(this.src, 'Persona 02: Rafael Moura (38 anos)', 'O Comparador de Valor • Pariquera-Açu/SP • Renda R$ 8.200')">
+              <div>
+                <h3 class="font-playfair font-bold text-xl text-espresso">Rafael Moura, 38 anos</h3>
+                <p class="text-xs text-gold font-mono font-bold uppercase">O Comparador de Valor • Pariquera-Açu/SP</p>
+                <p class="text-xs text-mocha/60 mt-0.5">Engenheiro Agrônomo • Renda R$ 8.200</p>
+              </div>
+            </div>
+
+            <div class="mt-6 p-4 rounded-2xl bg-creme border border-gold/10 italic text-xs text-mocha leading-relaxed">
+              "Gosto de café de qualidade, mas antes de pagar R$ 45 num pacote quero ter certeza de que entrega muito mais que o café tradicional de mercado..."
+            </div>
+
+            <div class="mt-6 space-y-3 text-xs">
+              <div class="flex justify-between py-1.5 border-b border-gold/10">
+                <span class="text-mocha/60">Dificuldade Principal:</span>
+                <span class="font-semibold text-espresso">Ceticismo de custo-benefício e falta de prova social</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-gold/10">
+                <span class="text-mocha/60">Canal Preferido:</span>
+                <span class="font-semibold text-espresso">Carrossel Técnico Instagram & E-commerce</span>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-gold/10">
+                <span class="text-mocha/60">Solução de IA (Atv 1):</span>
+                <span class="font-semibold text-gold">Widget de Prova Social Dinâmica (4.8⭐ 127 avaliações)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-gold/10 flex justify-between items-center text-xs font-mono">
+            <span class="text-mocha/60">Jornada: Carrossel → Reviews → E-commerce</span>
+            <span class="text-vale font-bold">Ativação: Sistema 2 → Sistema 1</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABELA COMPARATIVA DE JORNADA (DESCOBERTA, CONSIDERAÇÃO E DECISÃO) -->
+      <div class="mt-12 p-8 rounded-3xl bg-white gold-border creme-glow" data-aos="fade-up">
+        <h3 class="font-playfair font-bold text-xl text-espresso">Mapeamento da Jornada do Cliente (Entregável b — CC-b)</h3>
+        <p class="text-xs text-mocha/70 mt-1">Comparativo de pontos de contato, fricções e antídotos em cada etapa do funil.</p>
+
+        <div class="overflow-x-auto mt-6">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-espresso text-creme uppercase tracking-wider font-mono">
+              <tr>
+                <th class="p-3.5 rounded-l-xl">Etapa</th>
+                <th class="p-3.5">Ana Clara (Curadoria)</th>
+                <th class="p-3.5">Rafael Moura (Valor)</th>
+                <th class="p-3.5 rounded-r-xl">Antídoto / Solução IA</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gold/10">
+              <tr>
+                <td class="p-3.5 font-bold font-mono text-espresso">1. Descoberta</td>
+                <td class="p-3.5 text-mocha/80">Vê Reels no Instagram com vapor e xícara, sente vontade mas não sabe qual produto comprar.</td>
+                <td class="p-3.5 text-mocha/80">Vê anúncio comparativo no feed, questiona se o preço de R$ 45 se justifica.</td>
+                <td class="p-3.5 font-semibold text-gold">Quiz interativo "Qual café combina com você?" (30 segundos)</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 font-bold font-mono text-espresso">2. Consideração</td>
+                <td class="p-3.5 text-mocha/80">Chama no WhatsApp buscando recomendação personalizada; antes esperava 6 horas.</td>
+                <td class="p-3.5 text-mocha/80">Acessa a página do produto procurando avaliações reais e detalhes do lote.</td>
+                <td class="p-3.5 font-semibold text-gold">Chatbot com IA NLP (&lt; 2 min SLA) + Prova Social Dinâmica (4.8⭐ 127 reviews)</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 font-bold font-mono text-espresso">3. Decisão / Compra</td>
+                <td class="p-3.5 text-mocha/80">Recebe sugestão do Kit Degustação 3x50g com frete grátis e fecha o pedido.</td>
+                <td class="p-3.5 text-mocha/80">Vê ancoragem de preço (De R$ 55 por R$ 45) e lote limitado de 40 unidades para retirada na feira.</td>
+                <td class="p-3.5 font-semibold text-gold">Checkout simplificado no WhatsApp / E-commerce integrado à Feira Local</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- BLOCO ATIVIDADE 2: NEUROMARKETING, GATILHOS E CALENDÁRIO -->
+  <!-- ========================================================================= -->
+  <section id="atv2" class="max-w-[1280px] mx-auto px-6 py-20">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6" data-aos="fade-up">
+      <div>
+        <span class="px-3.5 py-1 rounded-full bg-caramel/20 text-espresso text-xs uppercase tracking-widest font-mono font-bold">Atividade 2 • 14h-16h</span>
+        <h2 class="font-playfair text-3xl sm:text-4xl font-black text-espresso mt-3">Neuromarketing, Gatilhos & Calendário</h2>
+        <p class="text-mocha/80 text-sm max-w-[650px] mt-2">Por que o Sistema 1 (emoção e automatismo) converte onde o Sistema 2 (racionalidade técnica pura) falhou. Mapeamento dos 7 gatilhos e cronograma de 3 postagens.</p>
+      </div>
+      <div class="flex gap-2">
+        <span class="px-3 py-1 bg-white gold-border rounded-lg text-xs font-mono text-mocha">CC-a: Matriz S1/S2</span>
+        <span class="px-3 py-1 bg-white gold-border rounded-lg text-xs font-mono text-mocha">CC-c: 3 Posts</span>
+        <span class="px-3 py-1 bg-white gold-border rounded-lg text-xs font-mono text-mocha">Justificativa Teórica</span>
+      </div>
+    </div>
+
+    <!-- MATRIZ DE GATILHOS (2x3) -->
+    <div class="mt-12 overflow-x-auto rounded-3xl bg-white gold-border creme-glow p-8" data-aos="fade-up">
+      <h3 class="font-playfair font-bold text-xl text-espresso">Matriz Geral de Gatilhos Mentais por Funil e Persona</h3>
+      <p class="text-xs text-mocha/70 mt-1">Mapeamento cognitivo: Sistema 1 (rápido, emocional, instintivo) vs Sistema 2 (lento, analítico, reflexivo).</p>
+
+      <table class="w-full text-left text-xs mt-6">
+        <thead class="bg-espresso text-creme uppercase tracking-wider font-mono">
+          <tr>
+            <th class="p-3.5 rounded-l-xl">Persona</th>
+            <th class="p-3.5">Topo (Descoberta)</th>
+            <th class="p-3.5">Meio (Consideração)</th>
+            <th class="p-3.5">Fundo (Decisão)</th>
+            <th class="p-3.5 rounded-r-xl">Dinâmica Cognitiva</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gold/10">
+          <tr class="hover:bg-creme/40 transition">
+            <td class="p-4 font-bold text-espresso">
+              Ana Clara (34)<br>
+              <span class="text-[11px] font-normal text-mocha/60">Indecisão Emocional</span>
+            </td>
+            <td class="p-4">
+              <span class="px-2.5 py-1 rounded-full bg-gold/15 text-espresso font-bold">Dopamina (S1)</span><br>
+              <span class="text-mocha/70 text-[11px] mt-1 inline-block">Curiosidade e recompensa imediata com Quiz 30s</span>
+            </td>
+            <td class="p-4">
+              <span class="px-2.5 py-1 rounded-full bg-vale/15 text-vale font-bold">Reciprocidade (S1)</span><br>
+              <span class="text-mocha/70 text-[11px] mt-1 inline-block">Kit Degustação 3x50g como consultoria e presente</span>
+            </td>
+            <td class="p-4">
+              <span class="px-2.5 py-1 rounded-full bg-mocha text-creme font-bold">Escassez Real (S1)</span><br>
+              <span class="text-mocha/70 text-[11px] mt-1 inline-block">Apenas 40 unidades do lote especial de lançamento</span>
+            </td>
+            <td class="p-4 font-mono font-semibold text-gold">100% Sistema 1 (S1 → S1 → S1)</td>
+          </tr>
+          <tr class="hover:bg-creme/40 transition">
+            <td class="p-4 font-bold text-espresso">
+              Rafael Moura (38)<br>
+              <span class="text-[11px] font-normal text-mocha/60">Ceticismo de Preço</span>
+            </td>
+            <td class="p-4">
+              <span class="px-2.5 py-1 rounded-full bg-gold/15 text-espresso font-bold">Prova Social (S1)</span><br>
+              <span class="text-mocha/70 text-[11px] mt-1 inline-block">Nota 4.8⭐ com 127 clientes do Vale do Ribeira</span>
+            </td>
+            <td class="p-4">
+              <span class="px-2.5 py-1 rounded-full bg-caramel/20 text-espresso font-bold">Ancoragem (S2 → S1)</span><br>
+              <span class="text-mocha/70 text-[11px] mt-1 inline-block">De R$ 55 por R$ 45 (racionaliza custo-benefício)</span>
+            </td>
+            <td class="p-4">
+              <span class="px-2.5 py-1 rounded-full bg-espresso text-gold font-bold">Urgência + Identidade (S1)</span><br>
+              <span class="text-mocha/70 text-[11px] mt-1 inline-block">Até domingo 12h + orgulho de consumir do produtor local</span>
+            </td>
+            <td class="p-4 font-mono font-semibold text-vale">Híbrido (S1 → S2→S1 → S1)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CRONOGRAMA DO CALENDÁRIO DE CONTEÚDO (3 POSTS) -->
+    <div class="grid md:grid-cols-3 gap-6 mt-8" data-aos="fade-up" data-aos-delay="100">
+      <!-- Post 1 -->
+      <div class="p-6 rounded-3xl bg-white gold-border creme-glow flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-center text-xs font-mono mb-3">
+            <span class="text-gold font-bold">POST 01 • TOPO</span>
+            <span class="text-mocha/60">Segunda, 01/09 — 18h</span>
+          </div>
+          <h4 class="font-playfair font-bold text-lg text-espresso">Reels Quiz Dopamina</h4>
+          <p class="text-xs font-mono text-vale mt-1">Instagram Reels (15s) + Stories Quiz</p>
+          <p class="text-xs text-mocha/80 mt-3 leading-relaxed">
+            Close em slow motion com vapor de café subindo e áudio de moagem real. Chamada: <em>"Qual Grão Vivo combina com seu paladar? Faça o quiz de 30s."</em>
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-gold/10 flex justify-between items-center text-[11px] font-mono">
+          <span class="text-mocha/60">Gatilho: Dopamina S1</span>
+          <span class="font-bold text-gold">Meta: CTR &gt; 12%</span>
+        </div>
+      </div>
+
+      <!-- Post 2 -->
+      <div class="p-6 rounded-3xl bg-white gold-border creme-glow flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-center text-xs font-mono mb-3">
+            <span class="text-gold font-bold">POST 02 • MEIO</span>
+            <span class="text-mocha/60">Quarta, 03/09 — 19h</span>
+          </div>
+          <h4 class="font-playfair font-bold text-lg text-espresso">Carrossel Ancoragem & Valor</h4>
+          <p class="text-xs font-mono text-vale mt-1">Instagram Carrossel (4 Cards) + WhatsApp</p>
+          <p class="text-xs text-mocha/80 mt-3 leading-relaxed">
+            Card 1: "De R$ 55 por R$ 45 no lançamento". Card 2: Comparativo sensorial vs tradicional. Card 3: Kit Degustação 3x50g. Card 4: CTA para WhatsApp.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-gold/10 flex justify-between items-center text-[11px] font-mono">
+          <span class="text-mocha/60">Gatilho: Ancoragem / Reciprocidade</span>
+          <span class="font-bold text-gold">Meta: SLA &lt; 2min</span>
+        </div>
+      </div>
+
+      <!-- Post 3 -->
+      <div class="p-6 rounded-3xl bg-white gold-border creme-glow flex flex-col justify-between">
+        <div>
+          <div class="flex justify-between items-center text-xs font-mono mb-3">
+            <span class="text-gold font-bold">POST 03 • FUNDO</span>
+            <span class="text-mocha/60">Sábado, 06/09 — 08h</span>
+          </div>
+          <h4 class="font-playfair font-bold text-lg text-espresso">WhatsApp & Feira do Vale</h4>
+          <p class="text-xs font-mono text-vale mt-1">Disparo WhatsApp Broadcast + Estande Físico</p>
+          <p class="text-xs text-mocha/80 mt-3 leading-relaxed">
+            Mensagem de escassez ética: <em>"Lote exclusivo de 40 pacotes torrados na sexta. Reserve no WhatsApp ou retire hoje na feira do produtor até às 12h."</em>
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-gold/10 flex justify-between items-center text-[11px] font-mono">
+          <span class="text-mocha/60">Gatilho: Escassez / Identidade</span>
+          <span class="font-bold text-gold">Meta: Conv. &gt; 4%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- BLOCO ATIVIDADE 3: PRODUÇÃO DOS CRIATIVOS, CONCEITOS VISUAIS E KPIS -->
+  <!-- ========================================================================= -->
+  <section id="atv3" class="bg-creme2/40 border-y border-gold/15 py-20">
+    <div class="max-w-[1280px] mx-auto px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6" data-aos="fade-up">
+        <div>
+          <span class="px-3.5 py-1 rounded-full bg-vale/20 text-vale text-xs uppercase tracking-widest font-mono font-bold">Atividade 3 • 16h15-18h</span>
+          <h2 class="font-playfair text-3xl sm:text-4xl font-black text-espresso mt-3">Criativos Prontos, Conceito Visual & KPIs</h2>
+          <p class="text-mocha/80 text-sm max-w-[650px] mt-2">Redação definitiva das 3 peças com marketing sensorial digital, revisão crítica documentada, prompts de imagem externos e dashboard de medição de resultados.</p>
+        </div>
+        <div class="flex gap-2">
+          <span class="px-3 py-1 bg-white gold-border rounded-lg text-xs font-mono text-mocha">CC-a: 3 Peças Finais</span>
+          <span class="px-3 py-1 bg-white gold-border rounded-lg text-xs font-mono text-mocha">CC-b: Conceito Visual</span>
+          <span class="px-3 py-1 bg-white gold-border rounded-lg text-xs font-mono text-mocha">CC-c: ≥4 KPIs</span>
+          <span class="px-3 py-1 bg-white gold-border rounded-lg text-xs font-mono text-mocha">CC-d: Ética</span>
+        </div>
+      </div>
+
+      <!-- TABS INTERATIVAS PARA AS 3 PEÇAS E CONCEITOS VISUAIS -->
+      <div class="mt-12" data-aos="fade-up">
+        <div class="flex flex-wrap gap-2 border-b border-gold/20 pb-3">
+          <button onclick="switchTab('peca1')" id="tabBtn-peca1" class="tab-btn active px-5 py-2.5 rounded-2xl text-xs font-mono font-bold uppercase tracking-wider transition border border-gold/30">
+            Peça 01 — Reels Topo (Dopamina)
+          </button>
+          <button onclick="switchTab('peca2')" id="tabBtn-peca2" class="tab-btn px-5 py-2.5 rounded-2xl text-xs font-mono font-bold uppercase tracking-wider transition border border-gold/30 bg-white text-espresso">
+            Peça 02 — Carrossel Meio (Ancoragem)
+          </button>
+          <button onclick="switchTab('peca3')" id="tabBtn-peca3" class="tab-btn px-5 py-2.5 rounded-2xl text-xs font-mono font-bold uppercase tracking-wider transition border border-gold/30 bg-white text-espresso">
+            Peça 03 — WhatsApp Fundo (Escassez)
+          </button>
+        </div>
+
+        <!-- Conteúdo Peça 1 -->
+        <div id="tab-peca1" class="tab-content active mt-6 p-8 rounded-3xl bg-white gold-border creme-glow">
+          <div class="grid lg:grid-cols-12 gap-8">
+            <div class="lg:col-span-7 space-y-4">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-full bg-gold/15 text-gold text-xs font-mono font-bold uppercase">Texto Definitivo (Entregável a)</span>
+                <span class="text-xs text-mocha/60 font-mono">Instagram Reels 15s</span>
+              </div>
+              <h4 class="font-playfair font-bold text-2xl text-espresso">"Qual Grão Vivo é você?" (Quiz 30s)</h4>
+              
+              <div class="p-4 rounded-2xl bg-creme border border-gold/15 text-xs text-mocha leading-relaxed space-y-2">
+                <p><strong>Roteiro do Vídeo (0-15s):</strong> Close macro de vapor de café especial subindo em câmera lenta (0-3s, áudio com estalo da torra e moagem real) → Surge na tela o lettering dourado: <em>“Qual Grão Vivo é você?”</em> (3-7s) → Transição rápida com 3 perguntas intuitivas (7-11s) → Selo final: <em>“4.8⭐ 127 apreciadores do Vale já escolheram o seu”</em> (11-15s).</p>
+                <p><strong>Legenda:</strong> ☕ Sigo faz tempo mas ainda não sei qual café combina com o meu dia? [Dopamina S1]<br>
+                Descubra seu perfil sensorial em 3 perguntas rápidas de 30 segundos no link da bio. Sem ficha técnica complicada!<br>
+                ✨ 4.8⭐ Mais de 120 vizinhos do Vale do Ribeira já descobriram o seu.<br>
+                🔗 Toque no link da bio e faça o Quiz ou chame no WhatsApp (&lt;2 min de resposta).</p>
+              </div>
+
+              <!-- Tabela de Revisão Crítica -->
+              <div class="p-4 rounded-2xl bg-creme2/40 border border-gold/10 text-xs">
+                <p class="font-mono font-bold text-espresso uppercase mb-1">Revisão Crítica Humana (Critério CC-a):</p>
+                <div class="space-y-1.5 text-mocha/80">
+                  <p><strong>Texto inicial gerado pela IA:</strong> <em>"Café delicioso da Grão Vivo, venha provar nossa nova torra média premium! Gostoso e especial."</em></p>
+                  <p><strong>Alteração e Justificativa:</strong> O texto da IA era genérico e ativava apenas o Sistema 2 de forma passiva. Foi reformulado para um quiz de curiosidade (Dopamina S1) com prova social local e marketing sensorial sonoro e visual de vapor.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Conceito Visual & Prompt Peça 01 -->
+            <div class="lg:col-span-5 space-y-4">
+              <div class="rounded-2xl overflow-hidden gold-border shadow-md bg-espresso relative group cursor-zoom-in" onclick="openLightbox('docs/entregaveis/criativos/imagem-peca-01-topo-dopamina.jpg', 'Peça 01 — Topo Reels Dopamina (9:16)', 'Close Macro de Vapor + Xícara Grão Vivo + Selo Quiz 30s')">
+                <img src="docs/entregaveis/criativos/imagem-peca-01-topo-dopamina.jpg" alt="Criativo Peça 01 Topo Reels Dopamina" class="w-full h-[280px] object-cover group-hover:scale-105 transition duration-500">
+                <div class="absolute inset-0 bg-espresso/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                  <span class="px-3 py-1.5 rounded-full bg-espresso/90 text-gold text-xs font-mono font-bold shadow-lg flex items-center gap-1.5">
+                    🔍 Clique para Expandir
+                  </span>
+                </div>
+                <div class="p-4 bg-espresso text-creme">
+                  <div class="flex items-center justify-between">
+                    <span class="text-gold text-[10px] font-mono uppercase tracking-wider font-bold">Imagem Gerada por IA (DALL·E 3 / Midjourney)</span>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-gold/20 text-gold">9:16 Vertical</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-6 rounded-2xl bg-espresso text-creme">
+                <p class="text-gold text-xs font-mono uppercase tracking-wider font-bold">Conceito Visual (Entregável b)</p>
+                <ul class="text-xs space-y-2 mt-3 text-creme/80">
+                  <li>• <strong>Paleta:</strong> Fundo Creme (#F5EFE6), Ouro (#C9A86A) e Café (#1A120B).</li>
+                  <li>• <strong>Composição:</strong> Xícara minimalista em cerâmica artesanal, iluminação matinal suave (golden hour).</li>
+                  <li>• <strong>Sensorial Digital:</strong> Vapor volumétrico nítido e foco macro na crema do café.</li>
+                </ul>
+
+                <p class="text-gold text-xs font-mono uppercase tracking-wider font-bold mt-5">Prompt Registrado (DALL·E / Midjourney)</p>
+                <pre class="mt-2 p-3 rounded-xl bg-mocha text-[11px] font-mono text-goldLight overflow-x-auto whitespace-pre-wrap">close-up specialty coffee cup with dense crema, steam slow motion swirling, cream background #F5EFE6, golden badge "Quiz 30s", morning sunlight, photorealistic 8k, vertical 9:16 --seed 42 --no cartoon, text clutter, dark</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conteúdo Peça 2 (Carrossel Interativo 4 Cards) -->
+        <div id="tab-peca2" class="tab-content mt-6 p-8 rounded-3xl bg-white gold-border creme-glow">
+          <div class="grid lg:grid-cols-12 gap-8">
+            <div class="lg:col-span-7 space-y-4">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-full bg-gold/15 text-gold text-xs font-mono font-bold uppercase">Texto Definitivo (Entregável a)</span>
+                <span class="text-xs text-mocha/60 font-mono">Instagram Carrossel (4 Cards)</span>
+              </div>
+              <h4 class="font-playfair font-bold text-2xl text-espresso">"Por que R$ 45 vale cada centavo?" (Ancoragem & Valor)</h4>
+              
+              <div class="p-4 rounded-2xl bg-creme border border-gold/15 text-xs text-mocha leading-relaxed space-y-2">
+                <p><strong>Estrutura dos Cards:</strong><br>
+                • <strong>Card 1:</strong> <em>De R$ 55 por R$ 45</em> — Lançamento exclusivo do lote de Torra Média.<br>
+                • <strong>Card 2:</strong> Grão 100% Arábica selecionado manualmente vs grão comercial queimado.<br>
+                • <strong>Card 3:</strong> Kit Degustação 3x50g com frete grátis para experimentar antes do pacote grande.<br>
+                • <strong>Card 4:</strong> Atendimento via WhatsApp com resposta em menos de 2 minutos.</p>
+                <p><strong>Legenda:</strong> Quanto custa tomar um café de verdade que não precisa de açúcar?<br>
+                Preparamos uma condição especial de lançamento para o Vale do Ribeira: De R$ 55 por R$ 45 no pacote de 250g, ou leve o Kit Degustação 3x50g.<br>
+                📲 Converse agora com nosso barista no WhatsApp pelo link da bio (resposta em &lt;2 min).</p>
+              </div>
+
+              <!-- Tabela de Revisão Crítica -->
+              <div class="p-4 rounded-2xl bg-creme2/40 border border-gold/10 text-xs">
+                <p class="font-mono font-bold text-espresso uppercase mb-1">Revisão Crítica Humana (Critério CC-a):</p>
+                <div class="space-y-1.5 text-mocha/80">
+                  <p><strong>Texto inicial gerado pela IA:</strong> <em>"Compre nosso café na promoção por R$ 45 reais com desconto."</em></p>
+                  <p><strong>Alteração e Justificativa:</strong> A IA não havia inserido o preço âncora (R$ 55) nem a oferta de reciprocidade (Kit 3x50g). Ajustamos para ancorar o valor no Sistema 2 de Rafael e aliviar o risco de compra no Sistema 1.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Visualizador Interativo de Carrossel de Slides -->
+            <div class="lg:col-span-5 space-y-4">
+              <div class="p-4 rounded-2xl bg-espresso text-creme border border-gold/30">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="text-gold text-xs font-mono uppercase tracking-wider font-bold">Carrossel Interativo (Instagram Feed)</span>
+                  <span class="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-gold/20 text-gold font-bold">
+                    Card <span id="currentCardNum">1</span> / 4
+                  </span>
+                </div>
+
+                <!-- Viewport do Slide Ativo -->
+                <div class="relative rounded-xl overflow-hidden gold-border bg-mocha/60 group cursor-zoom-in" onclick="zoomCurrentCarrossel()">
+                  <img id="carrosselMainImg" src="docs/entregaveis/criativos/imagem-carrossel-card-01.jpg" alt="Carrossel Card Ativo" class="w-full h-[260px] object-cover transition duration-300">
+                  
+                  <!-- Overlay de Zoom -->
+                  <div class="absolute inset-0 bg-espresso/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center pointer-events-none">
+                    <span class="px-3 py-1.5 rounded-full bg-espresso/90 text-gold text-xs font-mono font-bold shadow-lg">
+                      🔍 Clique para Expandir Imagem
+                    </span>
+                  </div>
+
+                  <!-- Botões de Navegação (Anterior / Próximo) -->
+                  <button type="button" onclick="event.stopPropagation(); prevCarrosselSlide()" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-espresso/80 hover:bg-gold hover:text-espresso text-creme font-bold flex items-center justify-center transition shadow-md">
+                    ‹
+                  </button>
+                  <button type="button" onclick="event.stopPropagation(); nextCarrosselSlide()" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-espresso/80 hover:bg-gold hover:text-espresso text-creme font-bold flex items-center justify-center transition shadow-md">
+                    ›
+                  </button>
+                </div>
+
+                <!-- Título do Card Ativo -->
+                <div class="mt-2 text-center">
+                  <p id="carrosselCardTitle" class="text-xs font-mono text-gold font-semibold">Card 1: De R$55 por R$45 (Ancoragem)</p>
+                </div>
+
+                <!-- Miniaturas de Acesso Rápido -->
+                <div class="grid grid-cols-4 gap-2 mt-3 pt-3 border-t border-gold/15">
+                  <button type="button" onclick="setCarrosselSlide(0)" id="thumb-0" class="carrossel-thumb rounded-lg overflow-hidden border-2 border-gold transition opacity-100 p-0.5 bg-mocha">
+                    <img src="docs/entregaveis/criativos/imagem-carrossel-card-01.jpg" alt="Thumb 1" class="w-full h-12 object-cover rounded">
+                  </button>
+                  <button type="button" onclick="setCarrosselSlide(1)" id="thumb-1" class="carrossel-thumb rounded-lg overflow-hidden border border-gold/20 hover:border-gold transition opacity-60 hover:opacity-100 p-0.5 bg-mocha">
+                    <img src="docs/entregaveis/criativos/imagem-carrossel-card-02.jpg" alt="Thumb 2" class="w-full h-12 object-cover rounded">
+                  </button>
+                  <button type="button" onclick="setCarrosselSlide(2)" id="thumb-2" class="carrossel-thumb rounded-lg overflow-hidden border border-gold/20 hover:border-gold transition opacity-60 hover:opacity-100 p-0.5 bg-mocha">
+                    <img src="docs/entregaveis/criativos/imagem-carrossel-card-03.jpg" alt="Thumb 3" class="w-full h-12 object-cover rounded">
+                  </button>
+                  <button type="button" onclick="setCarrosselSlide(3)" id="thumb-3" class="carrossel-thumb rounded-lg overflow-hidden border border-gold/20 hover:border-gold transition opacity-60 hover:opacity-100 p-0.5 bg-mocha">
+                    <img src="docs/entregaveis/criativos/imagem-carrossel-card-04.jpg" alt="Thumb 4" class="w-full h-12 object-cover rounded">
+                  </button>
+                </div>
+              </div>
+
+              <div class="p-6 rounded-2xl bg-espresso text-creme">
+                <p class="text-gold text-xs font-mono uppercase tracking-wider font-bold">Conceito Visual (Entregável b)</p>
+                <ul class="text-xs space-y-2 mt-3 text-creme/80">
+                  <li>• <strong>Paleta:</strong> Kraft natural, Café Caramelo (#D5A373) e Selo Dourado (#C9A86A).</li>
+                  <li>• <strong>Composição:</strong> 4 cards sequenciais ativando Sistema 2 (Ancoragem R$55→R$45) e Sistema 1 (Kit 3x50g).</li>
+                  <li>• <strong>Sensorial Digital:</strong> Textura granulada e reflexo dos óleos essenciais da torra fresca.</li>
+                </ul>
+
+                <p class="text-gold text-xs font-mono uppercase tracking-wider font-bold mt-5">Prompt Registrado (DALL·E / Midjourney)</p>
+                <pre class="mt-2 p-3 rounded-xl bg-mocha text-[11px] font-mono text-goldLight overflow-x-auto whitespace-pre-wrap">macro top-down view of roasted coffee beans on kraft paper, three small 50g tasting pouches labeled GRÃO VIVO, gold price tag "De R$55 por R$45", studio lighting, 1:1 square --seed 123 --no hands, blur, text errors</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conteúdo Peça 3 -->
+        <div id="tab-peca3" class="tab-content mt-6 p-8 rounded-3xl bg-white gold-border creme-glow">
+          <div class="grid lg:grid-cols-12 gap-8">
+            <div class="lg:col-span-7 space-y-4">
+              <div class="flex items-center gap-2">
+                <span class="px-2.5 py-1 rounded-full bg-gold/15 text-gold text-xs font-mono font-bold uppercase">Texto Definitivo (Entregável a)</span>
+                <span class="text-xs text-mocha/60 font-mono">WhatsApp Broadcast & Estande na Feira</span>
+              </div>
+              <h4 class="font-playfair font-bold text-2xl text-espresso">"Lote de 40 Unidades — Torra Fresca desta Sexta"</h4>
+              
+              <div class="p-4 rounded-2xl bg-creme border border-gold/15 text-xs text-mocha leading-relaxed space-y-2">
+                <p><strong>Mensagem WhatsApp Broadcast:</strong><br>
+                Olá, [Primeiro Nome]! ☕<br>
+                A fornada desta semana da nossa <strong>Torra Média Especial</strong> acabou de sair do torrador em Registro.<br>
+                São exatamente <strong>40 pacotes numerados</strong> separados para a feira deste sábado.<br>
+                📍 Você pode retirar conosco no estande da Feira do Produtor (8h às 12h) ou solicitar entrega rápida em domicílio.<br>
+                👉 Responda <em>"QUERO MEU MÉDIO"</em> para garantir sua unidade antes que esgote.</p>
+              </div>
+
+              <!-- Tabela de Revisão Crítica -->
+              <div class="p-4 rounded-2xl bg-creme2/40 border border-gold/10 text-xs">
+                <p class="font-mono font-bold text-espresso uppercase mb-1">Revisão Crítica Humana (Critério CC-a):</p>
+                <div class="space-y-1.5 text-mocha/80">
+                  <p><strong>Texto inicial gerado pela IA:</strong> <em>"Últimas 5 unidades restantes corra antes que acabe tudo!"</em></p>
+                  <p><strong>Alteração e Justificativa:</strong> A IA gerou falsa escassez apelativa. Corrigimos para escassez real e ética (lote real de 40 pacotes torrados na sexta), com identificação local do Vale do Ribeira e opção de retirada presencial.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Conceito Visual & Prompt Peça 03 -->
+            <div class="lg:col-span-5 space-y-4">
+              <div class="rounded-2xl overflow-hidden gold-border shadow-md bg-espresso relative group cursor-zoom-in" onclick="openLightbox('docs/entregaveis/criativos/imagem-peca-03-fundo-escassez.jpg', 'Peça 03 — Fundo Feira do Produtor & WhatsApp (3:4)', 'Estande Grão Vivo Café Especial + Lousa 40 Unidades + Barista e Vale do Ribeira')">
+                <img src="docs/entregaveis/criativos/imagem-peca-03-fundo-escassez.jpg" alt="Criativo Peça 03 Fundo Feira Escassez" class="w-full h-[280px] object-cover group-hover:scale-105 transition duration-500">
+                <div class="absolute inset-0 bg-espresso/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                  <span class="px-3 py-1.5 rounded-full bg-espresso/90 text-gold text-xs font-mono font-bold shadow-lg flex items-center gap-1.5">
+                    🔍 Clique para Expandir
+                  </span>
+                </div>
+                <div class="p-4 bg-espresso text-creme">
+                  <div class="flex items-center justify-between">
+                    <span class="text-gold text-[10px] font-mono uppercase tracking-wider font-bold">Imagem Gerada por IA (DALL·E 3 / Midjourney)</span>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-gold/20 text-gold">3:4 Vertical</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-6 rounded-2xl bg-espresso text-creme">
+                <p class="text-gold text-xs font-mono uppercase tracking-wider font-bold">Conceito Visual (Entregável b)</p>
+                <ul class="text-xs space-y-2 mt-3 text-creme/80">
+                  <li>• <strong>Paleta:</strong> Tons rústicos de madeira, Verde Floresta (#2E4A3A) e Amarelo Dourado.</li>
+                  <li>• <strong>Composição:</strong> Estande de feira artesanal com pacotes organizados e selo numérico "LOTE 40 UNIDADES".</li>
+                  <li>• <strong>Sensorial Digital:</strong> Clima aconchegante de manhã de feira com luz natural filtrada.</li>
+                </ul>
+
+                <p class="text-gold text-xs font-mono uppercase tracking-wider font-bold mt-5">Prompt Registrado (DALL·E / Midjourney)</p>
+                <pre class="mt-2 p-3 rounded-xl bg-mocha text-[11px] font-mono text-goldLight overflow-x-auto whitespace-pre-wrap">artisan farmers market stall with coffee bags labeled "40 UNIDADES", morning sunlight, lush green background, rustic wood texture, photorealistic 4:5 --seed 777 --no distorted text, cartoon</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABELA DE KPIS, DEFINIÇÃO, MENSURAÇÃO E METAS -->
+      <div class="mt-16 p-8 rounded-3xl bg-white gold-border creme-glow" data-aos="fade-up">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <p class="text-gold text-xs font-mono font-bold uppercase tracking-wider">Entregável c) • CC-c</p>
+            <h3 class="font-playfair font-bold text-2xl text-espresso mt-1">Plano de Medição e Tabela de KPIs</h3>
+            <p class="text-xs text-mocha/70">Métricas selecionadas via consulta com IA para acompanhar a meta de +20% de vendas digitais.</p>
+          </div>
+          <button onclick="document.getElementById('promptKpiModal').showModal()" class="px-4 py-2 rounded-xl bg-espresso text-creme text-xs font-mono font-semibold hover:bg-mocha transition">
+            Ver Prompt & Resposta IA da Seleção de KPIs →
+          </button>
+        </div>
+
+        <div class="overflow-x-auto mt-6">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-espresso text-creme uppercase tracking-wider font-mono">
+              <tr>
+                <th class="p-3.5 rounded-l-xl">#</th>
+                <th class="p-3.5">Indicador (KPI)</th>
+                <th class="p-3.5">Definição</th>
+                <th class="p-3.5">Forma de Mensuração</th>
+                <th class="p-3.5">Meta Definida</th>
+                <th class="p-3.5 rounded-r-xl">Peça Vinculada</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gold/10">
+              <tr class="hover:bg-creme/40 transition">
+                <td class="p-3.5 font-bold font-mono text-gold">1</td>
+                <td class="p-3.5 font-bold text-espresso">CTR do Quiz (Reels)</td>
+                <td class="p-3.5 text-mocha/80">Taxa de cliques no link do quiz em relação às visualizações do Reels de Topo.</td>
+                <td class="p-3.5 font-mono text-mocha">Instagram Insights + Bitly UTM</td>
+                <td class="p-3.5 font-bold font-mono text-vale">&gt; 12,0%</td>
+                <td class="p-3.5 text-mocha/70 font-mono">Post 01 (Topo)</td>
+              </tr>
+              <tr class="hover:bg-creme/40 transition">
+                <td class="p-3.5 font-bold font-mono text-gold">2</td>
+                <td class="p-3.5 font-bold text-espresso">Tempo de Resposta (SLA)</td>
+                <td class="p-3.5 text-mocha/80">Tempo médio decorrido entre a primeira mensagem do cliente e a resposta automática inteligente.</td>
+                <td class="p-3.5 font-mono text-mocha">Logs da WhatsApp Business API</td>
+                <td class="p-3.5 font-bold font-mono text-vale">&lt; 2 minutos</td>
+                <td class="p-3.5 text-mocha/70 font-mono">Post 02 (Meio)</td>
+              </tr>
+              <tr class="hover:bg-creme/40 transition">
+                <td class="p-3.5 font-bold font-mono text-gold">3</td>
+                <td class="p-3.5 font-bold text-espresso">Taxa de Conversão Fundo</td>
+                <td class="p-3.5 text-mocha/80">Proporção de visitantes ou contatos que efetivam o pedido do pacote de torra média.</td>
+                <td class="p-3.5 font-mono text-mocha">E-commerce / Relatório de Feira</td>
+                <td class="p-3.5 font-bold font-mono text-vale">&gt; 4,0%</td>
+                <td class="p-3.5 text-mocha/70 font-mono">Post 03 (Fundo)</td>
+              </tr>
+              <tr class="hover:bg-creme/40 transition">
+                <td class="p-3.5 font-bold font-mono text-gold">4</td>
+                <td class="p-3.5 font-bold text-espresso">Ticket Médio de Venda</td>
+                <td class="p-3.5 text-mocha/80">Faturamento total obtido dividido pelo número de pedidos fechados na campanha.</td>
+                <td class="p-3.5 font-mono text-mocha">Painel Financeiro</td>
+                <td class="p-3.5 font-bold font-mono text-vale">R$ 45,00</td>
+                <td class="p-3.5 text-mocha/70 font-mono">Geral da Campanha</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- GRÁFICOS DO DASHBOARD DE KPIS -->
+        <div class="grid lg:grid-cols-2 gap-8 mt-8">
+          <div class="p-6 rounded-2xl bg-creme border border-gold/15">
+            <h4 class="font-playfair font-bold text-base text-espresso">Funil de Conversão Projetado</h4>
+            <div class="h-[220px] mt-4">
+              <canvas id="chartFunnel"></canvas>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-creme border border-gold/15">
+            <h4 class="font-playfair font-bold text-base text-espresso">Projeção da Meta de +20% em Vendas (30 Dias)</h4>
+            <div class="h-[220px] mt-4">
+              <canvas id="chartSalesGrowth"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Critério Desejável CD-a: Ajustes Condicionados a Hipóteses -->
+        <div class="mt-8 p-5 rounded-2xl bg-vale/10 border border-vale/20 text-xs">
+          <p class="font-bold text-vale uppercase font-mono">Ajustes de Campanha Condicionados a Desvios de KPIs (Critério Desejável CD-a):</p>
+          <ul class="mt-2 space-y-1.5 text-mocha">
+            <li>• <strong>Hipótese A (CTR &lt; 12% no Reels):</strong> Substituir a capa estática por teaser dinâmico do quiz e impulsionar Stories interativos com enquete nativa.</li>
+            <li>• <strong>Hipótese B (Conversão de Fundo &lt; 4%):</strong> Reforçar o gatilho de escassez no WhatsApp com contagem regressiva das últimas 15 unidades e oferecer retirada presencial na feira com degustação grátis.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- NOTA SOBRE ÉTICA NO USO DA IA (ENTREGÁVEL D) -->
+      <div class="mt-8 p-8 rounded-3xl bg-espresso text-creme gold-border" data-aos="fade-up">
+        <div class="flex items-center gap-2">
+          <span class="px-3 py-1 rounded-full bg-gold/20 text-gold text-xs font-mono font-bold uppercase">Entregável d) • CC-d</span>
+          <span class="text-xs text-creme/60 font-mono">Diretrizes Éticas e Governança</span>
+        </div>
+        <h3 class="font-playfair font-bold text-2xl text-gold mt-2">Nota sobre Ética no Uso de IA na Criação de Conteúdo</h3>
+
+        <div class="grid md:grid-cols-3 gap-6 mt-6 text-xs leading-relaxed">
+          <div class="p-4 rounded-2xl bg-mocha/60 border border-gold/20">
+            <h4 class="font-bold text-creme text-sm font-playfair">1. Transparência</h4>
+            <p class="text-creme/80 mt-2">
+              As peças foram redigidas com assistência de Modelos de Linguagem Generativos (LLMs), mas submetidas a curadoria e revisão humana obrigatória. Sempre que oportuno, o material comunica o apoio de IA na personalização do atendimento.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-mocha/60 border border-gold/20">
+            <h4 class="font-bold text-creme text-sm font-playfair">2. Direitos Autorais & Imagens</h4>
+            <p class="text-creme/80 mt-2">
+              Todas as imagens de referência utilizadas no projeto provêm da plataforma Pexels (licença aberta com atribuição formal documentada), sem infração de copyright ou apropriação de marcas de terceiros.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-mocha/60 border border-gold/20">
+            <h4 class="font-bold text-creme text-sm font-playfair">3. Verificação Humana</h4>
+            <p class="text-creme/80 mt-2">
+              Filtro ativo contra alucinações e manipulação: correções de dados geográficos (Registro/Vale do Ribeira) e substituição de gatilhos abusivos (falsa escassez) por compromissos reais de estoque e entrega artesanal.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- BLOCO REFLEXÃO FINAL E VISÃO SISTÊMICA -->
+  <!-- ========================================================================= -->
+  <section id="reflexao" class="max-w-[1280px] mx-auto px-6 py-20">
+    <div class="p-8 sm:p-12 rounded-3xl bg-white gold-border creme-glow" data-aos="fade-up">
+      <div class="flex items-center gap-2">
+        <span class="px-3 py-1 rounded-full bg-gold/20 text-espresso text-xs font-mono font-bold uppercase">Entregável e) • CC-e</span>
+        <span class="text-xs text-mocha/60 font-mono">10 Linhas Consolidadas</span>
+      </div>
+      <h3 class="font-playfair font-black text-3xl text-espresso mt-3">Reflexão Final Individual: A Jornada com IA ao Longo do Curso</h3>
+
+      <div class="mt-6 p-6 rounded-2xl bg-creme border border-gold/15 text-sm sm:text-base text-mocha leading-relaxed font-light space-y-3">
+        <p>1. Ao longo do curso de Marketing Digital com IA (SENAI-SP), utilizei inteligência artificial generativa em todas as fases do projeto Grão Vivo, vivenciando uma consultoria de ponta a ponta.</p>
+        <p>2. Na Atividade 1, a IA auxiliou na concepção das personas (Ana 34 e Rafael 38) a partir do Quadro 2, mas foi indispensável intervir para corrigir vieses regionais e alinhar as dores de compra.</p>
+        <p>3. Na Atividade 2, mapeamos os 7 gatilhos no funil e o calendário de 3 postagens, usando a IA para contrapor os limites do Sistema 2 (racional) frente ao poder de ativação do Sistema 1 (emocional).</p>
+        <p>4. Na Atividade 3, a IA estruturou os textos e conceitos visuais das 3 peças com apelo sensorial, além de fundamentar a escolha dos 4 KPIs para atingir o crescimento de +20% nas vendas digitais.</p>
+        <p>5. O papel da governança ética se fez evidente ao auditar alucinações da IA, substituindo apelos de falsa escassez por transparência real com o consumidor local do Vale do Ribeira.</p>
+        <p>6. Ficou demonstrado que a IA atua com excelência no papel de co-piloto: potencializa a produtividade, a ideação criativa e a automação de postagens, mas não substitui a estratégia humana.</p>
+        <p>7. A visão sistêmica adquirida permitiu costurar dados de público, psicologia do consumidor, design de conteúdo e mensuração métrica em um ecossistema único e perfeitamente coerente.</p>
+      </div>
+
+      <div class="mt-8 flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-gold/15 text-xs font-mono text-mocha/70">
+        <span>Gabriel Bardusco • Aperfeiçoamento Profissional em Marketing Digital com IA</span>
+        <span class="text-gold font-bold">SENAI Registro/SP • 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-espresso text-creme/70 text-xs py-12 border-t border-gold/15">
+    <div class="max-w-[1280px] mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-gold text-espresso flex items-center justify-center font-playfair font-bold">GV</div>
+        <div>
+          <p class="font-playfair font-bold text-creme">Grão Vivo Cafés Especiais</p>
+          <p class="text-[10px] text-creme/50">Consultoria Completa • Atividades 1, 2 e 3</p>
+        </div>
+      </div>
+
+      <p class="text-center sm:text-right text-[11px] leading-relaxed">
+        Imagens: <a href="https://www.pexels.com/api/documentation/" target="_blank" class="text-gold underline hover:text-goldLight">Pexels API</a> (Licença aberta com atribuição).<br>
+        Documentação completa no Obsidian Vault (<code class="text-gold font-mono">docs/00-20</code>).
+      </p>
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: REGISTRO COMPLETO DE PROMPTS (20 PROMPTS AUDITADOS) -->
+  <!-- ========================================================================= -->
+  <dialog id="promptsModal" class="p-0 rounded-3xl max-w-[920px] w-[95%] backdrop:bg-espresso/70 shadow-2xl border border-gold/30">
+    <div class="bg-creme text-espresso flex flex-col max-h-[85vh]">
+      <!-- Header do Modal -->
+      <div class="p-6 border-b border-gold/15 flex items-center justify-between bg-white rounded-t-3xl">
+        <div>
+          <span class="px-2.5 py-0.5 rounded-full bg-gold/20 text-espresso text-[10px] font-mono font-bold uppercase">Auditoria e Transparência</span>
+          <h3 class="font-playfair text-xl font-bold text-espresso mt-1">Registro de Prompts Utilizados (1 a 20)</h3>
+        </div>
+        <button onclick="document.getElementById('promptsModal').close()" class="w-8 h-8 rounded-full bg-espresso text-creme hover:bg-mocha flex items-center justify-center text-sm font-bold transition">✕</button>
+      </div>
+
+      <!-- Corpo do Modal -->
+      <div class="p-6 overflow-y-auto space-y-4 text-xs font-mono">
+        <p class="text-mocha/80 font-sans text-xs mb-4">
+          Conforme exigido pelos cadernos de atividades (critérios CC-c/d), abaixo estão registrados na íntegra os prompts submetidos aos modelos generativos:
+        </p>
+
+        <!-- Prompt 13: Gatilhos -->
+        <details class="p-4 rounded-2xl bg-white gold-border" open>
+          <summary class="font-bold text-espresso cursor-pointer flex justify-between items-center">
+            <span>Prompt 13 — Matriz de Gatilhos (Atividade 2)</span>
+            <span class="text-gold text-[11px]">ChatGPT / Claude</span>
+          </summary>
+          <pre class="mt-3 p-3 bg-creme rounded-xl text-[11px] whitespace-pre-wrap text-mocha">produza os gatilhos para cada persona criada em '/docs/entregaveis/personas' salvando-os em '/docs/entregaveis/gatilhos'</pre>
+        </details>
+
+        <!-- Prompt 14: Calendário -->
+        <details class="p-4 rounded-2xl bg-white gold-border">
+          <summary class="font-bold text-espresso cursor-pointer flex justify-between items-center">
+            <span>Prompt 14 — Calendário 3 Posts (Atividade 2)</span>
+            <span class="text-gold text-[11px]">ChatGPT / Claude</span>
+          </summary>
+          <pre class="mt-3 p-3 bg-creme rounded-xl text-[11px] whitespace-pre-wrap text-mocha">Agora crie os calendários em '/docs/entregaveis/calendario'</pre>
+        </details>
+
+        <!-- Prompt 16: Peça 01 Topo -->
+        <details class="p-4 rounded-2xl bg-white gold-border">
+          <summary class="font-bold text-espresso cursor-pointer flex justify-between items-center">
+            <span>Prompt 16 — Peça 01 Topo Reels Dopamina (Atividade 3)</span>
+            <span class="text-gold text-[11px]">ChatGPT-4o</span>
+          </summary>
+          <pre class="mt-3 p-3 bg-creme rounded-xl text-[11px] whitespace-pre-wrap text-mocha">A partir do calendário Atv2 (IG Reels Topo Dopamina S1 + Prova social S1, Ana 34 curadoria + Rafael 38 valor, Grão Vivo 8.200 seguidores, torra média R$45), redija a legenda Reels 15s com gatilho Dopamina S1 e sensorial digital (vapor+som), incluindo CTA quiz 30s e prova 4.8⭐. Tom premium, curto.</pre>
+        </details>
+
+        <!-- Prompt 17: Peça 02 Meio -->
+        <details class="p-4 rounded-2xl bg-white gold-border">
+          <summary class="font-bold text-espresso cursor-pointer flex justify-between items-center">
+            <span>Prompt 17 — Peça 02 Meio Carrossel Ancoragem (Atividade 3)</span>
+            <span class="text-gold text-[11px]">ChatGPT-4o</span>
+          </summary>
+          <pre class="mt-3 p-3 bg-creme rounded-xl text-[11px] whitespace-pre-wrap text-mocha">A partir do calendário Atv2 (IG Carrossel Meio Reciprocidade S1 + Ancoragem S2→S1, Ana kit 3×50g + Rafael R$55→R$45 vs R$38), redija legenda Carrossel 4 cards com ancoragem e reciprocidade, CTA WhatsApp &lt;2min. Tom premium.</pre>
+        </details>
+
+        <!-- Prompt 18: Peça 03 Fundo -->
+        <details class="p-4 rounded-2xl bg-white gold-border">
+          <summary class="font-bold text-espresso cursor-pointer flex justify-between items-center">
+            <span>Prompt 18 — Peça 03 Fundo WhatsApp Escassez (Atividade 3)</span>
+            <span class="text-gold text-[11px]">ChatGPT-4o</span>
+          </summary>
+          <pre class="mt-3 p-3 bg-creme rounded-xl text-[11px] whitespace-pre-wrap text-mocha">A partir do calendário Atv2 (WhatsApp+Feira Fundo Escassez S1 + Urgência/Identidade S1, lote 40un até domingo 12h, Vale do Ribeira, meta +20%), redija WhatsApp broadcast + banner feira com escassez real e identidade, CTA "Quero meu Médio R$45". Tom urgente mas ético.</pre>
+        </details>
+
+        <!-- Prompt 19: Pesquisa de KPIs -->
+        <details class="p-4 rounded-2xl bg-white gold-border">
+          <summary class="font-bold text-espresso cursor-pointer flex justify-between items-center">
+            <span>Prompt 19 — Pesquisa e Seleção de KPIs (Atividade 3)</span>
+            <span class="text-gold text-[11px]">ChatGPT-4o</span>
+          </summary>
+          <pre class="mt-3 p-3 bg-creme rounded-xl text-[11px] whitespace-pre-wrap text-mocha">Quais KPIs são adequados para avaliar campanha de lançamento de produto em e-commerce (torra média premium, meta +20% vendas digitais, canais IG 8.200, WhatsApp, feira, 3 posts Topo/Meio/Fundo)? Liste 8-10 com definição, forma de mensuração e canal.</pre>
+        </details>
+
+        <!-- Prompt 20: Ética e Reflexão -->
+        <details class="p-4 rounded-2xl bg-white gold-border">
+          <summary class="font-bold text-espresso cursor-pointer flex justify-between items-center">
+            <span>Prompt 20 — Nota Ética e Reflexão Final (Atividade 3)</span>
+            <span class="text-gold text-[11px]">ChatGPT-4o</span>
+          </summary>
+          <pre class="mt-3 p-3 bg-creme rounded-xl text-[11px] whitespace-pre-wrap text-mocha">Redija nota ética sobre uso de IA na criação de conteúdo (transparência, direitos autorais e verificação humana) para Grão Vivo, com Pexels e revisão ≥1 alteração por peça. Em seguida, elabore reflexão final individual ≥10 linhas relacionando uso da IA às etapas do curso.</pre>
+        </details>
+      </div>
+
+      <!-- Footer do Modal -->
+      <div class="p-4 border-t border-gold/15 bg-white rounded-b-3xl flex justify-between items-center">
+        <span class="text-[11px] text-mocha/60">Todos os 20 prompts salvos em docs/entregaveis/registro-prompts.md</span>
+        <button onclick="document.getElementById('promptsModal').close()" class="px-5 py-2 rounded-full bg-espresso text-creme text-xs font-semibold hover:bg-mocha transition">Fechar</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: PROMPT & RESPOSTA DE KPIS NA ÍNTEGRA -->
+  <!-- ========================================================================= -->
+  <dialog id="promptKpiModal" class="p-0 rounded-3xl max-w-[800px] w-[95%] backdrop:bg-espresso/70 shadow-2xl border border-gold/30">
+    <div class="bg-creme text-espresso flex flex-col max-h-[85vh]">
+      <div class="p-6 border-b border-gold/15 flex items-center justify-between bg-white rounded-t-3xl">
+        <div>
+          <span class="px-2.5 py-0.5 rounded-full bg-gold/20 text-espresso text-[10px] font-mono font-bold uppercase">Evidência IA Obrigatória (CC-c)</span>
+          <h3 class="font-playfair text-xl font-bold text-espresso mt-1">Prompt e Resposta IA: Seleção de KPIs</h3>
+        </div>
+        <button onclick="document.getElementById('promptKpiModal').close()" class="w-8 h-8 rounded-full bg-espresso text-creme hover:bg-mocha flex items-center justify-center text-sm font-bold transition">✕</button>
+      </div>
+
+      <div class="p-6 overflow-y-auto space-y-4 text-xs font-mono">
+        <div class="p-4 rounded-2xl bg-white gold-border">
+          <p class="font-bold text-espresso uppercase mb-2">Prompt Submetido (ChatGPT-4o):</p>
+          <p class="text-mocha leading-relaxed whitespace-pre-wrap">Quais KPIs são adequados para avaliar campanha de lançamento de produto em e-commerce (torra média premium, meta +20% vendas digitais, canais IG 8.200, WhatsApp, feira, 3 posts Topo Reels Dopamina, Meio Carrossel Reciprocidade/Ancoragem, Fundo WhatsApp Escassez)? Liste 8-10 com definição, forma de mensuração e canal.</p>
+        </div>
+
+        <div class="p-4 rounded-2xl bg-white gold-border">
+          <p class="font-bold text-espresso uppercase mb-2">Resposta da IA na Íntegra:</p>
+          <div class="text-mocha/90 space-y-2 leading-relaxed">
+            <p>1. <strong>CTR (Click-Through Rate):</strong> Cliques / impressões × 100 — Instagram Reels Topo — Mede a atenção inicial do Post 01 (Dopamina).</p>
+            <p>2. <strong>Taxa de Conversão de Fundo:</strong> Vendas / visitantes × 100 — Loja virtual e WhatsApp — Mede o fechamento do Post 03 (Escassez).</p>
+            <p>3. <strong>Tempo de Resposta no WhatsApp:</strong> Média de tempo da primeira resposta — Logs da API — Mede o SLA do Post 02 (Meio).</p>
+            <p>4. <strong>Ticket Médio:</strong> Faturamento total / pedidos — Painel de vendas — Monitora a manutenção do valor de R$ 45.</p>
+            <p>5. <strong>CAC (Custo de Aquisição por Cliente):</strong> Investimento em mídia / novos clientes.</p>
+            <p>6. <strong>ROAS (Retorno sobre Investimento Publicitário):</strong> Receita gerada por anúncios / custo de anúncios.</p>
+            <p>7. <strong>Taxa de Retirada na Feira:</strong> Pedidos retirados presencialmente / total de pedidos.</p>
+            <p>8. <strong>Crescimento de Vendas Digitais:</strong> (Vendas mês atual - mês anterior) / base — Mede o alcance da meta de +20%.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 border-t border-gold/15 bg-white rounded-b-3xl flex justify-end">
+        <button onclick="document.getElementById('promptKpiModal').close()" class="px-5 py-2 rounded-full bg-espresso text-creme text-xs font-semibold hover:bg-mocha transition">Fechar</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ========================================================================= -->
+  <!-- MODAL: LIGHTBOX DE IMAGENS EM ALTA RESOLUÇÃO -->
+  <!-- ========================================================================= -->
+  <dialog id="imageLightbox" class="p-0 rounded-3xl max-w-[1000px] w-[95%] backdrop:bg-espresso/85 shadow-2xl border border-gold/40 bg-espresso text-creme" onclick="if(event.target===this) closeLightbox()">
+    <div class="flex flex-col max-h-[90vh]">
+      <!-- Header do Lightbox -->
+      <div class="p-4 sm:p-5 border-b border-gold/20 flex items-center justify-between bg-mocha/60">
+        <div>
+          <span id="lightboxTag" class="px-2.5 py-0.5 rounded-full bg-gold/20 text-gold text-[10px] font-mono font-bold uppercase tracking-wider">Visualização Expandida</span>
+          <h3 id="lightboxCaption" class="font-playfair text-lg sm:text-xl font-bold text-creme mt-1">Imagem Grão Vivo</h3>
+        </div>
+        <button type="button" onclick="closeLightbox()" class="w-9 h-9 rounded-full bg-espresso/90 border border-gold/30 text-gold hover:bg-gold hover:text-espresso flex items-center justify-center text-base font-bold transition">✕</button>
+      </div>
+
+      <!-- Imagem Ampliada -->
+      <div class="p-4 sm:p-6 overflow-auto flex items-center justify-center bg-espresso">
+        <img id="lightboxImg" src="" alt="Imagem Expandida" class="max-h-[65vh] w-auto max-w-full rounded-2xl object-contain shadow-2xl gold-border">
+      </div>
+
+      <!-- Rodapé do Lightbox -->
+      <div class="p-3 border-t border-gold/15 bg-mocha/40 flex items-center justify-between text-xs font-mono text-creme/60">
+        <span>Pressione ESC ou clique fora para fechar</span>
+        <button type="button" onclick="closeLightbox()" class="px-4 py-1.5 rounded-full bg-gold text-espresso font-bold text-xs hover:bg-caramel transition">Fechar</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- JAVASCRIPT: ABAS, PROGRESSO, CARROSSEL E LIGHTBOX -->
+  <script>
+    // Inicialização do AOS (Animate on Scroll)
+    AOS.init({ duration: 800, once: true, offset: 50 });
+
+    // Barra de Progresso de Leitura
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progressBar').style.width = scrolled + '%';
+    });
+
+    // Alternador de Abas de Criativos
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => {
+        el.classList.remove('active');
+        el.classList.remove('bg-espresso', 'text-creme');
+        el.classList.add('bg-white', 'text-espresso');
+      });
+
+      const activeContent = document.getElementById('tab-' + tabId);
+      const activeBtn = document.getElementById('tabBtn-' + tabId);
+
+      if (activeContent) activeContent.classList.add('active');
+      if (activeBtn) {
+        activeBtn.classList.add('active', 'bg-espresso', 'text-creme');
+        activeBtn.classList.remove('bg-white', 'text-espresso');
+      }
+    }
+
+    // ==========================================
+    // SISTEMA DE LIGHTBOX (EXPANSÃO DE IMAGENS)
+    // ==========================================
+    const lightboxDialog = document.getElementById('imageLightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxTag = document.getElementById('lightboxTag');
+
+    function openLightbox(src, caption, tag) {
+      lightboxImg.src = src;
+      lightboxCaption.innerText = caption || 'Imagem Grão Vivo';
+      lightboxTag.innerText = tag || 'Visualização Expandida';
+      lightboxDialog.showModal();
+    }
+
+    function closeLightbox() {
+      lightboxDialog.close();
+    }
+
+    // ==========================================
+    // CARROSSEL INTERATIVO DE SLIDES (PEÇA 02)
+    // ==========================================
+    const carrosselSlides = [
+      {
+        src: 'docs/entregaveis/criativos/imagem-carrossel-card-01.jpg',
+        title: 'Card 1: De R$55 por R$45 (Ancoragem de Preço)',
+        tag: 'Carrossel Meio • Lâmina 1 de 4'
+      },
+      {
+        src: 'docs/entregaveis/criativos/imagem-carrossel-card-02.jpg',
+        title: 'Card 2: Grão Vivo Fresco vs Industrial R$38 (Comparativo)',
+        tag: 'Carrossel Meio • Lâmina 2 de 4'
+      },
+      {
+        src: 'docs/entregaveis/criativos/imagem-carrossel-card-03.jpg',
+        title: 'Card 3: Kit Degustação 3x50g Presente (Reciprocidade)',
+        tag: 'Carrossel Meio • Lâmina 3 de 4'
+      },
+      {
+        src: 'docs/entregaveis/criativos/imagem-carrossel-card-04.jpg',
+        title: 'Card 4: CTA WhatsApp Atendimento <2min',
+        tag: 'Carrossel Meio • Lâmina 4 de 4'
+      }
+    ];
+
+    let currentSlide = 0;
+
+    function setCarrosselSlide(index) {
+      currentSlide = (index + carrosselSlides.length) % carrosselSlides.length;
+      const slide = carrosselSlides[currentSlide];
+
+      const mainImg = document.getElementById('carrosselMainImg');
+      mainImg.style.opacity = '0.3';
+      setTimeout(() => {
+        mainImg.src = slide.src;
+        mainImg.style.opacity = '1';
+      }, 100);
+
+      document.getElementById('currentCardNum').innerText = currentSlide + 1;
+      document.getElementById('carrosselCardTitle').innerText = slide.title;
+
+      // Atualiza bordas das miniaturas
+      for (let i = 0; i < carrosselSlides.length; i++) {
+        const thumb = document.getElementById('thumb-' + i);
+        if (thumb) {
+          if (i === currentSlide) {
+            thumb.className = 'carrossel-thumb rounded-lg overflow-hidden border-2 border-gold transition opacity-100 p-0.5 bg-mocha scale-105';
+          } else {
+            thumb.className = 'carrossel-thumb rounded-lg overflow-hidden border border-gold/20 hover:border-gold transition opacity-60 hover:opacity-100 p-0.5 bg-mocha';
+          }
+        }
+      }
+    }
+
+    function nextCarrosselSlide() {
+      setCarrosselSlide(currentSlide + 1);
+    }
+
+    function prevCarrosselSlide() {
+      setCarrosselSlide(currentSlide - 1);
+    }
+
+    function zoomCurrentCarrossel() {
+      const slide = carrosselSlides[currentSlide];
+      openLightbox(slide.src, slide.title, slide.tag);
+    }
+
+    // ==========================================
+    // CHART.JS GRÁFICOS
+    // ==========================================
+    // Chart 1: Audiência (Donut)
+    new Chart(document.getElementById('chartAudience'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Tráfego Frio (Indecisos)', 'Seguidores Engajados'],
+        datasets: [{
+          data: [60, 40],
+          backgroundColor: ['#C9A86A', '#1A120B'],
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } }
+      }
+    });
+
+    // Chart 2: SLA WhatsApp (Barra)
+    new Chart(document.getElementById('chartSla'), {
+      type: 'bar',
+      data: {
+        labels: ['SLA Anterior (Manual)', 'SLA com IA (Chatbot)'],
+        datasets: [{
+          label: 'Minutos de Espera',
+          data: [360, 2],
+          backgroundColor: ['#D5A373', '#2E4A3A'],
+          borderRadius: 8
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true, title: { display: true, text: 'Minutos' } } }
+      }
+    });
+
+    // Chart 3: Funil de Conversão
+    new Chart(document.getElementById('chartFunnel'), {
+      type: 'bar',
+      data: {
+        labels: ['1. CTR Quiz (Topo)', '2. SLA WA (Meio)', '3. Conversão (Fundo)', '4. Ticket Médio'],
+        datasets: [{
+          label: 'Métricas da Campanha',
+          data: [12, 2, 4, 45],
+          backgroundColor: ['#C9A86A', '#E8DDD0', '#1A120B', '#2E4A3A'],
+          borderRadius: 8
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+
+    // Chart 4: Projeção de Crescimento +20%
+    new Chart(document.getElementById('chartSalesGrowth'), {
+      type: 'line',
+      data: {
+        labels: ['Dia 0 (Início)', 'Dia 7 (Lançamento)', 'Dia 14 (Meio)', 'Dia 21 (Feira)', 'Dia 30 (Meta)'],
+        datasets: [{
+          label: 'Índice de Vendas (Base 100)',
+          data: [100, 107, 114, 118, 120],
+          borderColor: '#C9A86A',
+          backgroundColor: 'rgba(201,168,106,0.15)',
+          fill: true,
+          tension: 0.35,
+          pointBackgroundColor: '#1A120B',
+          pointRadius: 5
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: { y: { min: 95, max: 125, title: { display: true, text: 'Vendas Digitais (+20%)' } } }
+      }
+    });
+  </script>
 </body>
 </html>

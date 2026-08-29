@@ -4,7 +4,7 @@ tags: [senai, marketing-digital, ia, indice, vault, obsidian]
 cssclass: clean
 created: 2026-08-29
 updated: 2026-08-29
-source: Atividade_1_Aluno_Persona_e_Experiencia_do_Cliente.docx, Atividade_2_Aluno_Neuromarketing_e_Calendario_de_Conteudo.docx
+source: Atividade_1_Aluno_Persona_e_Experiencia_do_Cliente.docx, Atividade_2_Aluno_Neuromarketing_e_Calendario_de_Conteudo.docx, Atividade_3_Aluno_Producao_dos_Criativos_e_Medicao_de_Resultados.docx
 ---
 
 # Índice Geral — Atividades 1–3 — Grão Vivo (Vault Obsidian)
@@ -12,8 +12,8 @@ source: Atividade_1_Aluno_Persona_e_Experiencia_do_Cliente.docx, Atividade_2_Alu
 > [!QUOTE] Fonte literal
 > `Atividade_1_Aluno_Persona_e_Experiencia_do_Cliente.docx` + `Atividade_2_Aluno_Neuromarketing_e_Calendario_de_Conteudo.docx` — SENAI-SP, 2026. Autor: `Gabriel Guimarães Carneiro` — `Instrutor – SENAI-SP` — `Registro – SP`.
 
-> [!INFO] Sobre este vault — Atualizado para Atividade 2
-> Este `docs/` é o breakdown completo do **dia inteiro de encerramento (8h)** em arquitetura granular `kebab-case` numerada, padrão Obsidian. Atividade 1 (manhã 3h15) + Atividade 2 (tarde 14h-16h 2h) + Atividade 3 (tarde 16h15-18h). Todas as citações são literais.
+> [!INFO] Sobre este vault — Atualizado para Atividade 3
+> Este `docs/` é o breakdown completo do **dia inteiro de encerramento (8h)** em arquitetura granular `kebab-case` numerada, padrão Obsidian. Atividade 1 (manhã 3h15) + Atividade 2 (tarde 14h-16h 2h) + Atividade 3 (tarde 16h15-18h 1h45). Todas as citações são literais.
 
 ## 🗂️ Estrutura do Vault (8h)
 
@@ -33,21 +33,34 @@ docs/
 ├── 10-calendario-conteudo.md          # [NOVO] Atv2 calendário 3 posts
 ├── 11-guia-ia-revisao.md              # [NOVO] Atv2 IA revisão lógica
 ├── 12-entregavel-avaliacao-atv2.md    # [NOVO] Atv2 entregável + critérios
-├── 13-checklist-vault-atv2.md         # [NOVO] Atv2 checklist + ética
+├── 13-checklist-vault-atv2.md         # Atv2 checklist + ética
+├── 14-visao-geral-atv3.md             # [NOVO] Atv3 visão geral (tarde bloco 2)
+├── 15-tarefas-criativos.md            # [NOVO] Atv3 peças + sensorial + revisão
+├── 16-kpis-medicao.md                 # [NOVO] Atv3 KPIs 4+ + prompt IA
+├── 17-etica-ia.md                     # [NOVO] Atv3 ética IA
+├── 18-reflexao-final.md               # [NOVO] Atv3 reflexão 5/10 linhas
+├── 19-entregavel-avaliacao-atv3.md    # [NOVO] Atv3 entregável + critérios
+├── 20-checklist-vault-atv3.md         # [NOVO] Atv3 checklist
 ├── templates/
 │   ├── persona.md                     # Atv1
 │   ├── jornada-cliente.md             # Atv1
 │   ├── proposta-personalizacao.md     # Atv1
 │   ├── registro-prompts.md            # Atv1
-│   ├── gatilhos-por-persona.md        # [NOVO] Atv2
-│   ├── calendario-3-posts.md          # [NOVO] Atv2
-│   └── justificativa-s1-s2.md         # [NOVO] Atv2
+│   ├── gatilhos-por-persona.md        # Atv2
+│   ├── calendario-3-posts.md          # Atv2
+│   ├── justificativa-s1-s2.md         # Atv2
+│   ├── peca-comunicacao.md            # [NOVO] Atv3
+│   ├── conceito-visual.md             # [NOVO] Atv3
+│   ├── kpis-4-indicadores.md          # [NOVO] Atv3
+│   ├── nota-etica-ia.md               # [NOVO] Atv3
+│   └── reflexao-final.md              # [NOVO] Atv3
 └── entregaveis/
     ├── personas/  jornada_cliente/  propostaspersonalizacao/  # Atv1
     ├── gatilhos/  calendario/                 # Atv2
-    ├── analisecompleta.html                  # Análise personas (renomeado de pagina-completa)
-    ├── justificativas.html                   # Justificativas gatilhos+calendário S1/S2
-    └── registro-prompts.md                   # 15 prompts Atv1+Atv2
+    ├── criativos/  kpis/                     # [NOVO] Atv3
+    ├── analisecompleta.html                  # Análise personas (Atv1)
+    ├── justificativas.html                   # Justificativas S1/S2 (Atv2)
+    └── registro-prompts.md                   # 15+ prompts Atv1+Atv2+Atv3
 ```
 
 ## 🧭 Navegação por Atividade
@@ -65,7 +78,7 @@ docs/
 | `06` | [[06-guia-ia-e-prompts\|06 — Guia IA Atv1]] | Prompt contexto+objetivo+formato | `Atividade_1_...docx:36-37` |
 | `07` | [[07-checklist-e-templates\|07 — Checklist Atv1]] | Revisão Atv1 | Consolidado |
 
-### Atividade 2 — Neuromarketing e Calendário (Tarde 2h) — `CT1,CT4,CSE2,CSE3` [NOVO]
+### Atividade 2 — Neuromarketing e Calendário (Tarde 2h) — `CT1,CT4,CSE2,CSE3`
 
 | # | Arquivo | Quando usar | Fonte |
 |---|---|---|---|
@@ -75,6 +88,18 @@ docs/
 | `11` | [[11-guia-ia-revisao\|11 — IA Revisão Lógica]] | IA revisa gatilho-canal-funil | `Atividade_2_...docx:33-36` |
 | `12` | [[12-entregavel-avaliacao-atv2\|12 — Entregável Atv2]] | Rubrica Atv2 a-d + desejáveis | `Atividade_2_...docx:38-43` + `TABLE 3` |
 | `13` | [[13-checklist-vault-atv2\|13 — Checklist Atv2]] | Revisão ética + perfis + métrica | `Atividade_2_...docx:43` |
+
+### Atividade 3 — Produção dos Criativos e Medição (Tarde 1h45) — `CT3,CT5,CT6,CSE1,CSE3` [NOVO]
+
+| # | Arquivo | Quando usar | Fonte |
+|---|---|---|---|
+| `14` | [[14-visao-geral-atv3\|14 — Visão Geral Atv3]] | Entender tarde bloco 2, peças + KPIs | `Atividade_3_...docx:11,28` |
+| `15` | [[15-tarefas-criativos\|15 — Tarefas Criativos]] | 3 peças (texto+sensorial) + revisão + conceito visual | `Atividade_3_...docx:30-32` |
+| `16` | [[16-kpis-medicao\|16 — KPIs e Medição]] | Pesquisar IA + selecionar ≥4 KPIs | `Atividade_3_...docx:33` |
+| `17` | [[17-etica-ia\|17 — Ética IA]] | Nota ética transparência/autorais/verificação | `Atividade_3_...docx:34` |
+| `18` | [[18-reflexao-final\|18 — Reflexão Final]] | Reflexão ≥5/10 linhas ligando IA ao curso | `Atividade_3_...docx:35,43-44` |
+| `19` | [[19-entregavel-avaliacao-atv3\|19 — Entregável Atv3]] | Rubrica 5 críticos + 3 desejáveis | `Atividade_3_...docx:40-44` + `TABLE 3` |
+| `20` | [[20-checklist-vault-atv3\|20 — Checklist Atv3]] | Revisão visão sistêmica + automação | `Atividade_3_...docx:45` |
 
 > [!IMPORTANT] Reaproveitamento Atv1 → Atv2
 > `Reaproveite as personas e as peças produzidas nas atividades anteriores, pois o dia simula um único projeto de consultoria, do início ao fim.` — `Atividade_2_...docx:16` — use `[[../entregaveis/personas/persona-01-indecisa-curadoria|Ana]]` e `[[../entregaveis/personas/persona-02-comparador-valor|Rafael]]`.

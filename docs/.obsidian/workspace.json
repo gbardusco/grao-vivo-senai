@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "entregaveis/calendario/calendario-geral-3-posts.md",
+                "file": "entregaveis/criativos/prompt-imagem-01-topo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "calendario-geral-3-posts"
+              "title": "prompt-imagem-01-topo"
             }
           }
         ]
@@ -99,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "entregaveis/calendario/calendario-geral-3-posts.md",
+                "file": "entregaveis/criativos/prompt-imagem-01-topo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "entregaveis/calendario/calendario-geral-3-posts.md",
+                "file": "entregaveis/criativos/prompt-imagem-01-topo.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -161,7 +161,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "entregaveis/calendario/calendario-geral-3-posts.md",
+                "file": "entregaveis/criativos/prompt-imagem-01-topo.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -188,40 +188,49 @@
       "bases:Criar nova base": false
     }
   },
-  "active": "84d6fca7e38deff6",
+  "active": "e2e2a41552edd9d8",
   "lastOpenFiles": [
+    "entregaveis/criativos/imagem-carrossel-card-04.jpg",
+    "entregaveis/criativos/imagem-carrossel-card-03.jpg",
+    "entregaveis/criativos/imagem-carrossel-card-02.jpg",
+    "entregaveis/criativos/imagem-carrossel-card-01.jpg",
+    "entregaveis/criativos/imagem-peca-03-fundo-escassez.jpg",
+    "entregaveis/criativos/imagem-peca-02-meio-ancoragem.jpg",
+    "entregaveis/criativos/imagem-peca-01-topo-dopamina.jpg",
+    "entregaveis/calendario/calendario-geral-3-posts.md",
+    "entregaveis/criativos/README.md",
+    "entregaveis/criativos/prompt-imagem-02-meio.md",
+    "entregaveis/criativos/prompt-imagem-01-topo.md",
+    "entregaveis/criativos/conceito-visual-01-topo.md",
+    "entregaveis/kpis/kpis-4-indicadores.md",
+    "entregaveis/kpis/reflexao-final.md",
+    "entregaveis/kpis/nota-etica-ia.md",
+    "entregaveis/kpis/README.md",
+    "entregaveis/kpis/kpis-dashboard.html",
+    "entregaveis/criativos/prompt-imagem-03-fundo.md",
+    "entregaveis/criativos/conceito-visual-03-fundo.md",
+    "entregaveis/criativos/conceito-visual-02-meio.md",
+    "entregaveis/criativos/peca-03-fundo-escassez.md",
+    "entregaveis/criativos/peca-02-meio-reciprocidade-ancoragem.md",
+    "entregaveis/criativos/peca-01-topo-dopamina.md",
+    "entregaveis/kpis",
+    "entregaveis/criativos",
+    "templates/reflexao-final.md",
+    "templates/nota-etica-ia.md",
+    "templates/kpis-4-indicadores.md",
+    "templates/conceito-visual.md",
+    "templates/peca-comunicacao.md",
+    "20-checklist-vault-atv3.md",
+    "19-entregavel-avaliacao-atv3.md",
+    "18-reflexao-final.md",
+    "17-etica-ia.md",
+    "16-kpis-medicao.md",
     "entregaveis/justificativas.html",
     "entregaveis/analisecompleta.html",
-    "entregaveis/calendario/calendario-post-02-meio-reciprocidade-ancoragem.md",
-    "entregaveis/calendario/calendario-post-01-topo-dopamina.md",
-    "entregaveis/calendario/calendario-geral-3-posts.md",
-    "entregaveis/gatilhos/gatilhos-matriz-geral.md",
-    "entregaveis/calendario/calendario-post-03-fundo-escassez.md",
-    "entregaveis/calendario/README.md",
-    "entregaveis/gatilhos/gatilhos-ana-clara.md",
-    "08-visao-geral-atv2.md",
-    "entregaveis/gatilhos/gatilhos-rafael-moura.md",
-    "entregaveis/gatilhos/README.md",
-    "12-entregavel-avaliacao-atv2.md",
-    "10-calendario-conteudo.md",
-    "templates/calendario-3-posts.md",
-    "README.md",
     "entregaveis/calendario",
     "entregaveis/gatilhos",
-    "templates/justificativa-s1-s2.md",
-    "templates/gatilhos-por-persona.md",
-    "13-checklist-vault-atv2.md",
-    "11-guia-ia-revisao.md",
-    "09-tarefas-gatilhos-funil.md",
     "entregaveis/pagina-completa.html",
-    "entregaveis/registro-prompts.md",
-    "entregaveis/propostaspersonalizacao/proposta-01-ana-chatbot-recomendacao.md",
-    "entregaveis/jornada_cliente/jornada-persona-01-ana-clara.md",
-    "entregaveis/personas/persona-01-indecisa-curadoria.md",
-    "templates/persona.md",
-    "05-entregavel-e-avaliacao.md",
     "entregaveis/propostaspersonalizacao",
-    "entregaveis/jornada_cliente",
-    "entregaveis/personas"
+    "entregaveis/jornada_cliente"
   ]
 }

@@ -1,17 +1,17 @@
 ---
-aliases: ["Cronograma 8h", "Timebox Atividade 1 e 2"]
-tags: [senai, cronograma, timebox, gantt, atividade1, atividade2, obsidian]
+aliases: ["Cronograma 8h", "Timebox Atividades 1-3"]
+tags: [senai, cronograma, timebox, gantt, atividade1, atividade2, atividade3, obsidian]
 cssclass: clean
 created: 2026-08-29
 updated: 2026-08-29
-source: Atividade_1_Aluno_Persona_e_Experiencia_do_Cliente.docx, Atividade_2_Aluno_Neuromarketing_e_Calendario_de_Conteudo.docx
+source: Atividade_1_Aluno_Persona_e_Experiencia_do_Cliente.docx, Atividade_2_Aluno_Neuromarketing_e_Calendario_de_Conteudo.docx, Atividade_3_Aluno_Producao_dos_Criativos_e_Medicao_de_Resultados.docx
 prev: "[[02-perfil-grao-vivo|02 — Perfil Grão Vivo]]"
 next: "[[04-tarefas-passo-a-passo|04 — Tarefas Atv1]]"
 ---
 
 # 03 — Cronograma da Sessão (8h)
 
-> [!QUOTE] Fonte literal — `Atividade_1_Aluno_Persona_e_Experiencia_do_Cliente.docx:21-23` + `Atividade_2_Aluno_Neuromarketing_e_Calendario_de_Conteudo.docx:21-23` + `TABLE 2`
+> [!QUOTE] Fonte literal — `Atividade_1_Aluno_Persona_e_Experiencia_do_Cliente.docx:21-23` + `Atividade_2_Aluno_Neuromarketing_e_Calendario_de_Conteudo.docx:21-23` + `Atividade_3_Aluno_Producao_dos_Criativos_e_Medicao_de_Resultados.docx:21-23` + `TABLE 2`
 
 ## 3.1 Contexto
 
@@ -38,7 +38,7 @@ next: "[[04-tarefas-passo-a-passo|04 — Tarefas Atv1]]"
 | `18h00–18h15` | `Encerramento, entrega e autoavaliação` | `15 min` | `—` |
 
 > [!NOTE] Fonte
-> `TABLE 2` dos dois .docx — idêntico. Cores: manhã Atv1, tarde Atv2.
+> `TABLE 2` dos três .docx — idêntico. Cores: manhã Atv1, tarde Atv2+Atv3.
 
 ### Destaque — Blocos
 
@@ -50,7 +50,7 @@ next: "[[04-tarefas-passo-a-passo|04 — Tarefas Atv1]]"
 
 ```mermaid
 gantt
-    title Cronograma da Sessão — SENAI 8h (Atv1+Atv2)
+    title Cronograma da Sessão — SENAI 8h (Atv1+Atv2+Atv3)
     dateFormat HH:mm
     axisFormat %H:%M
     section Manhã
@@ -60,9 +60,9 @@ gantt
     Atividade 1 - Parte 2       :11:00, 120m
     section Tarde
     Almoço                      :13:00, 60m
-    Atividade 2 (NOVO)          :14:00, 120m
+    Atividade 2                 :14:00, 120m
     Intervalo                   :16:00, 15m
-    Atividade 3                 :16:15, 105m
+    Atividade 3 (NOVO detalhado):16:15, 105m
     Encerramento                :18:00, 15m
 ```
 
@@ -96,18 +96,39 @@ gantt
 > - [ ] Atv2 (d) IA revisão #tarefa/d-atv2
 > - [ ] Atv2 (e) Justificativa #tarefa/e-atv2
 
-## 3.4 O que acontece depois
+## 3.4 Atividade 3 — Tarde bloco 2 (1h45) — **NOVO**
+
+> [!IMPORTANT] Bloco Atv3 — `Atividade_3_...docx:26`
+> `Turno: Tarde (bloco 2) | Duração: 1h45 | Modalidade: Individual` — `Atividade_3_...docx:26` — `Reaproveite as personas e as peças produzidas nas atividades anteriores` `Atividade_3_...docx:16` — entrega até 18h00.
+
+| Bloco | Tarefa | Tempo | Apoio |
+|---|---|---|---|
+| `16h15–16h35` | (a) Redigir 3 peças com IA (texto+sensorial) | `20 min` | [[14-visao-geral-atv3]] + [[templates/peca-comunicacao\|peca]] |
+| `16h35–16h50` | (b) Revisar criticamente (≥1 alteração/peça) | `15 min` | [[15-tarefas-criativos]] |
+| `16h50–17h05` | (c) Conceito visual (composição/cores/sensorial) | `15 min` | [[templates/conceito-visual\|visual]] |
+| `17h05–17h30` | (d) Prompt IA KPIs → selecionar ≥4 KPIs | `25 min` | [[16-kpis-medicao]] + [[templates/kpis-4-indicadores\|kpis]] |
+| `17h30–17h45` | (e)+(f) Nota ética + reflexão final | `15 min` | [[17-etica-ia]] + [[18-reflexao-final]] |
+| `17h45–18h00` | Buffer + exportação | `15 min` | [[19-entregavel-avaliacao-atv3]] |
+
+> [!TIP] Atv3 tasks
+> - [ ] (a) 3 peças com gatilho #tarefa/a-atv3
+> - [ ] (b) Revisão ≥1 alteração/peça #tarefa/b-atv3
+> - [ ] (c) Conceito visual #tarefa/c-atv3
+> - [ ] (d) ≥4 KPIs com prompt IA #tarefa/d-atv3
+> - [ ] (e) Nota ética #tarefa/e-atv3
+> - [ ] (f) Reflexão ≥10 linhas #tarefa/f-atv3
+
+## 3.5 Encerramento
 
 | Horário | Atividade | Obs |
 |---|---|---|
-| `16h15–18h00` | Atividade 3 (Criativos + Medição) | `CT3,CT5,CT6,CSE1,CSE3` |
 | `18h00–18h15` | Encerramento e autoavaliação | — |
 
 > [!NOTE] Coerência dia inteiro
-> `Reaproveite as personas e as peças` — `Atividade_2_...docx:16` — mantenha `[[../entregaveis/personas/persona-01-indecisa-curadoria|Ana]]` e `[[../entregaveis/personas/persona-02-comparador-valor|Rafael]]` coerentes Atv1→Atv2→Atv3.
+> `Reaproveite as personas e as peças` — `Atividade_3_...docx:16` — mantenha `[[../entregaveis/personas/persona-01-indecisa-curadoria|Ana]]`/`[[../entregaveis/personas/persona-02-comparador-valor|Rafael]]` + `[[../entregaveis/gatilhos/gatilhos-matriz-geral|gatilhos]]` + `[[../entregaveis/calendario/calendario-geral-3-posts|calendário]]` coerentes Atv1→Atv3.
 
 ---
 > [!SUCCESS] Próximos passos
-> Atv1: [[04-tarefas-passo-a-passo|04 — Tarefas Atv1]] • Atv2: [[08-visao-geral-atv2|08 — Visão Geral Atv2]]
+> Atv1: [[04-tarefas-passo-a-passo|04]] • Atv2: [[08-visao-geral-atv2|08]] • Atv3: [[14-visao-geral-atv3|14 — Visão Geral Atv3]]
 
 #cronograma #timebox

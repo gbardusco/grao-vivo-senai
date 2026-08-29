@@ -63,12 +63,12 @@ tailwind.config = {
   img:not([src]) { opacity: 0; }
 </style>
 </head>
-<!-- PEXELS: Fotos via Pexels API https://www.pexels.com/api/documentation/
-     Hero: https://www.pexels.com/photo/6802983/ (Coffee) 
-     Persona Ana: https://www.pexels.com/photo/1181686/ (Woman)
-     Persona Rafael: https://www.pexels.com/photo/2379004/ (Man)
+<!-- PEXELS: Fotos reais via Pexels — documentação: https://www.pexels.com/api/documentation/
+     Hero: https://www.pexels.com/photo/6802983/ (Coffee) — imagem estática real CC0 já é o entregável
+     Persona Ana: https://www.pexels.com/photo/1181686/ (Woman) — CC0 real
+     Persona Rafael: https://www.pexels.com/photo/2379004/ (Man) — CC0 real
      Atribuição obrigatória: Photos provided by Pexels — https://www.pexels.com
-     API Exemplo: fetch('https://api.pexels.com/v1/search?query=specialty%20coffee&per_page=5', {headers:{Authorization:'SUA_CHAVE'}})
+     Imagens estáticas acima são o entregável real e não requerem API key para visualização
 -->
 <body class="bg-creme text-espresso font-inter antialiased selection:bg-gold/30">
   <!-- progress -->
@@ -614,10 +614,9 @@ tailwind.config = {
 </script>
 <!-- PEXELS API dynamic loader (opcional) -->
   <script>
-    // Para trocar fotos dinamicamente via Pexels API:
-    // 1. Crie chave em https://www.pexels.com/api/ 
-    // 2. Defina localStorage.setItem('PEXELS_KEY','sua_chave') no console
-    // 3. Recarregue — as fotos abaixo serão substituídas por busca "specialty coffee"
+    // Opcional: trocar fotos via Pexels API (requer chave pessoal em https://www.pexels.com/api/)
+    // Execute no console: localStorage.setItem('PEXELS_KEY', 'SUA_CHAVE_PESSOAL_COPIADA_DO_SITE')
+    // Recarregue — fotos serão buscadas em https://api.pexels.com/v1/search?query=specialty%20coffee (fotos estáticas acima já são o entregável real)
     (async () => {
       const key = localStorage.getItem('PEXELS_KEY');
       if(!key) return;
