@@ -267,6 +267,89 @@ Mude para fotos do PEXELS (api em https://www.pexels.com/api/documentation/)
 
 ---
 
+## Prompt 13 — 2026-08-29
+
+| Campo | Valor |
+|---|---|
+| **Data/Hora** | 2026-08-29 |
+| **Ferramenta** | Muse Spark (OpenCode) |
+| **Arquivo destino** | `docs/entregaveis/gatilhos/` (4 arquivos) |
+| **Tarefa** | Criar gatilhos por persona com S1/S2 e funil |
+
+### Prompt literal
+
+```text
+produza os gatilhos para cada persona criada em '/home/gbardusco/Documentos/GUSTAVO/SENAI/CURSOS/MARKETING/ATIVIDADE FINAL/docs/entregaveis/personas' salvando-os em '/home/gbardusco/Documentos/GUSTAVO/SENAI/CURSOS/MARKETING/ATIVIDADE FINAL/docs/entregaveis/gatilhos'
+```
+
+### Entregáveis gerados
+
+- `docs/entregaveis/gatilhos/README.md` — índice Atv2 b)
+- `docs/entregaveis/gatilhos/gatilhos-ana-clara.md` — Ana 34 Dopamina S1 (topo Reels quiz) → Reciprocidade S1 (meio kit 3×50g) → Escassez S1 (fundo lote 40un feira)
+- `docs/entregaveis/gatilhos/gatilhos-rafael-moura.md` — Rafael 38 Prova social S1 (topo carrossel 4.8⭐) → Ancoragem S2→S1 (meio R$55→R$45 vs R$38) → Urgência+Identidade S1 (fundo Vale)
+- `docs/entregaveis/gatilhos/gatilhos-matriz-geral.md` — matriz 2×3 CC-a/b (S1/S2 correto, ≥3 distintos)
+
+---
+
+## Prompt 14 — 2026-08-29
+
+| Campo | Valor |
+|---|---|
+| **Data/Hora** | 2026-08-29 |
+| **Ferramenta** | Muse Spark (OpenCode) |
+| **Arquivo destino** | `docs/entregaveis/calendario/` (5 arquivos) |
+| **Tarefa** | Criar calendário 3 postagens com canal, funil e gatilho |
+
+### Prompt literal
+
+```text
+Agora crie os calendários em '/home/gbardusco/Documentos/GUSTAVO/SENAI/CURSOS/MARKETING/ATIVIDADE FINAL/docs/entregaveis/calendario'
+```
+
+### Entregáveis gerados
+
+- `docs/entregaveis/calendario/README.md` — índice Atv2 c)
+- `docs/entregaveis/calendario/calendario-geral-3-posts.md` — tabela 3 posts: Seg 01 18h Topo Dopamina Reels, Qua 03 19h Meio Reciprocidade/Ancoragem Carrossel, Sáb 06 08h Fundo Escassez WhatsApp+Feira
+- `docs/entregaveis/calendario/calendario-post-01-topo-dopamina.md` — Post 01 Topo S1
+- `docs/entregaveis/calendario/calendario-post-02-meio-reciprocidade-ancoragem.md` — Post 02 Meio S1+S2→S1
+- `docs/entregaveis/calendario/calendario-post-03-fundo-escassez.md` — Post 03 Fundo S1
+
+---
+
+## Prompt 15 — 2026-08-29
+
+| Campo | Valor |
+|---|---|
+| **Data/Hora** | 2026-08-29 |
+| **Ferramenta** | Muse Spark (OpenCode) |
+| **Arquivos** | `docs/entregaveis/pagina-completa.html` → `docs/entregaveis/analisecompleta.html` + `docs/entregaveis/justificativas.html` |
+| **Tarefa** | Consolidar páginas: analisecompleta das personas + justificativas gatilhos/calendário |
+
+### Prompts literais
+
+```text
+vamos fazer assim
+1 - paginacompleta.html vira analisecompleta.html das personas
+2 - criar um justificativas.html com as justificativas de calendario e gatilhos usados
+3. atualizar o '/home/gbardusco/Documentos/GUSTAVO/SENAI/CURSOS/MARKETING/ATIVIDADE FINAL/docs/entregaveis/registro-prompts.md' com os prompts usados para gerar o calendario e os gatilhos
+```
+
+### Escolhas
+
+```text
+1. apenas em entregaveis
+2. só em entregaveis
+3. remover
+```
+
+### Entregáveis gerados/alterados
+
+- `git mv docs/entregaveis/pagina-completa.html docs/entregaveis/analisecompleta.html` — apenas em entregaveis, paginacompleta removida
+- `docs/entregaveis/justificativas.html` — single-file premium (Pexels, Tailwind, Chart.js 4 gráficos, AOS, GSAP) com seções Gatilhos (matriz S1/S2), Calendário (3 posts), Justificativa S1/S2 (6-8 linhas), área oculta prompts
+- `docs/entregaveis/registro-prompts.md` — Prompts 13 e 14 acrescidos
+
+---
+
 ## Checklist de Registro (CC-c)
 
 - [x] Todos os prompts na íntegra (sem resumo) #registro
@@ -275,6 +358,6 @@ Mude para fotos do PEXELS (api em https://www.pexels.com/api/documentation/)
 - [x] Copiar este arquivo para o documento final (Word/PDF/apresentação) conforme `docs/05-entregavel-e-avaliacao.md`
 
 > [!SUCCESS] Registro completo
-> Este arquivo atende à tarefa (f) — `Atividade_1_...docx:35` e ao critério crítico **CC-c**. Mantenha-o em `entregaveis/` e inclua-o na entrega.
+> Este arquivo atende à tarefa (f) — `Atividade_1_...docx:35` e `Atividade_2_...docx:36` (CC-c/d) — Atv1 e Atv2. Mantenha-o em `entregaveis/` e inclua-o na entrega.
 
 #registro #prompt #entregavel

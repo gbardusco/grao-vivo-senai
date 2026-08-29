@@ -1,27 +1,29 @@
 ---
-aliases: ["Cronograma 8h", "Timebox Atividade 1"]
-tags: [senai, cronograma, timebox, gantt, atividade1, obsidian]
+aliases: ["Cronograma 8h", "Timebox Atividade 1 e 2"]
+tags: [senai, cronograma, timebox, gantt, atividade1, atividade2, obsidian]
 cssclass: clean
 created: 2026-08-29
 updated: 2026-08-29
-source: Atividade_1_Aluno_Persona_e_Experiencia_do_Cliente.docx
+source: Atividade_1_Aluno_Persona_e_Experiencia_do_Cliente.docx, Atividade_2_Aluno_Neuromarketing_e_Calendario_de_Conteudo.docx
 prev: "[[02-perfil-grao-vivo|02 — Perfil Grão Vivo]]"
-next: "[[04-tarefas-passo-a-passo|04 — Tarefas]]"
+next: "[[04-tarefas-passo-a-passo|04 — Tarefas Atv1]]"
 ---
 
 # 03 — Cronograma da Sessão (8h)
 
-> [!QUOTE] Fonte literal — `Atividade_1_Aluno_Persona_e_Experiencia_do_Cliente.docx:21-23` + `TABLE 2`
-> `3 CRONOGRAMA DA SESSÃO`
+> [!QUOTE] Fonte literal — `Atividade_1_Aluno_Persona_e_Experiencia_do_Cliente.docx:21-23` + `Atividade_2_Aluno_Neuromarketing_e_Calendario_de_Conteudo.docx:21-23` + `TABLE 2`
 
 ## 3.1 Contexto
 
-> [!QUOTE] `Atividade_1_...docx:22`
+> [!QUOTE] Atv1 — `Atividade_1_...docx:22`
 > `Esta atividade corresponde ao bloco de manhã, destacado no Quadro 3.`
 
-> [!QUOTE] `Quadro 3 – Cronograma da sessão (8h)` — `Atividade_1_...docx:23`
+> [!QUOTE] Atv2 — `Atividade_2_...docx:22` — **novo destaque**
+> `Esta atividade corresponde ao bloco de tarde (bloco 1), destacado no Quadro 3.`
 
-## 3.2 Quadro 3 — Transcrição Fiel
+> [!QUOTE] `Quadro 3 – Cronograma da sessão (8h)` — `Atividade_1_...docx:23` / `Atividade_2_...docx:23`
+
+## 3.2 Quadro 3 — Transcrição Fiel (comum Atv1+Atv2)
 
 | Horário | Atividade | Duração | Capacidades |
 |---|---|---|---|
@@ -36,16 +38,19 @@ next: "[[04-tarefas-passo-a-passo|04 — Tarefas]]"
 | `18h00–18h15` | `Encerramento, entrega e autoavaliação` | `15 min` | `—` |
 
 > [!NOTE] Fonte
-> `TABLE 2` do .docx.
+> `TABLE 2` dos dois .docx — idêntico. Cores: manhã Atv1, tarde Atv2.
 
-### Destaque — Seu bloco
+### Destaque — Blocos
 
 > [!IMPORTANT] Bloco da manhã — Atividade 1
-> `09h30–13h00 (3h15 total, com intervalo 10h45–11h00)` — entrega até o **fim da aula** `Atividade_1_...docx:16`.
+> `09h30–13h00 (3h15 total, com intervalo 10h45–11h00)` — `Atividade_1_...docx:26` — entrega até 13h00.
+
+> [!IMPORTANT] Bloco da tarde (bloco 1) — Atividade 2 — **ATUALIZAÇÃO**
+> `14h00–16h00 (2h) | Turno: Tarde (bloco 1) | Modalidade: Individual` — `Atividade_2_...docx:26` — entrega até 16h00. Reaproveite personas Atv1!
 
 ```mermaid
 gantt
-    title Cronograma da Sessão — SENAI 8h
+    title Cronograma da Sessão — SENAI 8h (Atv1+Atv2)
     dateFormat HH:mm
     axisFormat %H:%M
     section Manhã
@@ -55,52 +60,54 @@ gantt
     Atividade 1 - Parte 2       :11:00, 120m
     section Tarde
     Almoço                      :13:00, 60m
-    Atividade 2                 :14:00, 120m
+    Atividade 2 (NOVO)          :14:00, 120m
     Intervalo                   :16:00, 15m
     Atividade 3                 :16:15, 105m
     Encerramento                :18:00, 15m
 ```
 
-## 3.3 Sugestão de Timebox para Atividade 1 (3h15)
+## 3.3 Sugestão de Timebox
 
-> [!TIP] Use o plugin **Tasks** ou **Dataview** para acompanhar
+### Atividade 1 (3h15) — Manhã 09h30-13h00
 
 | Bloco | Tarefa | Tempo | Apoio |
 |---|---|---|---|
 | `09h30–09h45` | (a) Analisar perfil Grão Vivo | `15 min` | [[02-perfil-grao-vivo]] |
-| `09h45–10h15` | (b) Escrever prompt + gerar 2 personas na IA | `30 min` | [[06-guia-ia-e-prompts]] + [[templates/persona\|persona]] |
-| `10h15–10h45` | (c) Revisar/corrigir personas | `30 min` | [[02-perfil-grao-vivo#2.4 Checklist de Coerência|checklist coerência]] |
+| `09h45–10h15` | (b) Prompt + 2 personas IA | `30 min` | [[06-guia-ia-e-prompts]] |
+| `10h15–10h45` | (c) Revisar personas | `30 min` | [[02-perfil-grao-vivo#2.4 Checklist|checklist]] |
 | `10h45–11h00` | Intervalo | `15 min` | — |
-| `11h00–12h00` | (d) Mapear jornada (2 personas x 3 etapas) | `60 min` | [[templates/jornada-cliente\|jornada]] |
-| `12h00–12h40` | (e) Propor ferramenta + justificativa dados/ML | `40 min` | [[templates/proposta-personalizacao\|proposta]] |
-| `12h40–13h00` | (f) Registrar prompts + formatar documento | `20 min` | [[templates/registro-prompts\|registro]] + [[05-entregavel-e-avaliacao]] |
+| `11h00–12h00` | (d) Jornada 3 etapas | `60 min` | [[templates/jornada-cliente\|jornada]] |
+| `12h00–12h40` | (e) Ferramenta + ML | `40 min` | [[templates/proposta-personalizacao\|proposta]] |
+| `12h40–13h00` | (f) Registro prompts | `20 min` | [[05-entregavel-e-avaliacao]] |
 
-### Checklist de tempo (tasks clicáveis no Obsidian)
+### Atividade 2 (2h) — Tarde 14h00-16h00 — **NOVO**
 
-- [ ] 09h30–09h45 (a) Análise Grão Vivo #tarefa/a
-- [ ] 09h45–10h15 (b) Prompt + geração #tarefa/b
-- [ ] 10h15–10h45 (c) Revisão crítica #tarefa/c
-- [ ] 11h00–12h00 (d) Jornada 3 etapas #tarefa/d
-- [ ] 12h00–12h40 (e) Ferramenta + ML #tarefa/e
-- [ ] 12h40–13h00 (f) Registro + entrega #tarefa/f
+| Bloco | Tarefa | Tempo | Apoio |
+|---|---|---|---|
+| `14h00–14h15` | (a) Retomar S1/S2 + gatilhos | `15 min` | [[08-visao-geral-atv2]] |
+| `14h15–14h55` | (b) Selecionar ≥3 gatilhos por persona + funil | `40 min` | [[09-tarefas-gatilhos-funil]] + [[templates/gatilhos-por-persona\|gatilhos]] |
+| `14h55–15h45` | (c) Calendário 3 posts (canal+funil+gatilho) | `50 min` | [[10-calendario-conteudo]] + [[templates/calendario-3-posts\|calendario]] |
+| `15h45–16h00` | (d)+(e) IA revisa lógica + justificativa S1/S2 | `15 min` | [[11-guia-ia-revisao]] + [[templates/justificativa-s1-s2\|justificativa]] |
 
-> [!WARNING] Buffer
-> Reserve 10 min de buffer para revisão com [[07-checklist-e-templates#Checklist Final|checklist final]] antes de entregar (CSE1 — visão sistêmica).
+> [!TIP] Use Tasks/Dataview
+> - [ ] Atv2 (a) S1/S2 #tarefa/a-atv2
+> - [ ] Atv2 (b) ≥3 gatilhos #tarefa/b-atv2
+> - [ ] Atv2 (c) Calendário 3 posts #tarefa/c-atv2
+> - [ ] Atv2 (d) IA revisão #tarefa/d-atv2
+> - [ ] Atv2 (e) Justificativa #tarefa/e-atv2
 
-## 3.4 O que acontece depois (tarde)
+## 3.4 O que acontece depois
 
 | Horário | Atividade | Obs |
 |---|---|---|
-| `14h00–16h00` | Atividade 2 (Neuromarketing + Calendário) | `CT1, CT4, CSE2, CSE3` |
-| `16h15–18h00` | Atividade 3 (Criativos + Medição) | `CT3, CT5, CT6, CSE1, CSE3` |
+| `16h15–18h00` | Atividade 3 (Criativos + Medição) | `CT3,CT5,CT6,CSE1,CSE3` |
 | `18h00–18h15` | Encerramento e autoavaliação | — |
 
-> [!NOTE] Coerência
-> As atividades 2 e 3 consomem o mesmo caso [[02-perfil-grao-vivo|Grão Vivo]] — mantenha personas/jornada coerentes para o dia todo.
+> [!NOTE] Coerência dia inteiro
+> `Reaproveite as personas e as peças` — `Atividade_2_...docx:16` — mantenha `[[../entregaveis/personas/persona-01-indecisa-curadoria|Ana]]` e `[[../entregaveis/personas/persona-02-comparador-valor|Rafael]]` coerentes Atv1→Atv2→Atv3.
 
 ---
-
-> [!SUCCESS] Próximo passo
-> [[04-tarefas-passo-a-passo|04 — Tarefas Passo a Passo]] para executar cada tarefa com critério.
+> [!SUCCESS] Próximos passos
+> Atv1: [[04-tarefas-passo-a-passo|04 — Tarefas Atv1]] • Atv2: [[08-visao-geral-atv2|08 — Visão Geral Atv2]]
 
 #cronograma #timebox

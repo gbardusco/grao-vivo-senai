@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grão Vivo — Justificativas: Gatilhos e Calendário (S1/S2)</title>
+<meta name="description" content="Justificativas Neuromarketing Grão Vivo — Gatilhos por persona (S1/S2) e Calendário 3 posts — Atividade 2 SENAI 2026. Topo Dopamina, Meio Reciprocidade/Ancoragem, Fundo Escassez.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={theme:{extend:{colors:{espresso:'#1A120B',mocha:'#3C2A21',caramel:'#D5A373',gold:'#C9A86A',creme:'#F5EFE6',creme2:'#E8DDD0',vale:'#2E4A3A'},fontFamily:{playfair:['Playfair Display','serif'],inter:['Inter','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+html{scroll-behavior:smooth}.glass{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}.gold-border{border:1px solid rgba(201,168,106,0.18)}.hero-overlay{background:linear-gradient(180deg, rgba(46,74,58,0.55) 0%, rgba(26,18,11,0.85) 75%, #1A120B 100%)}.creme-glow{box-shadow:0 20px 60px rgba(60,42,33,0.08)}.ticker{animation:ticker 28s linear infinite}@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}::webkit-scrollbar{width:8px}::webkit-scrollbar-thumb{background:#C9A86A;border-radius:999px}::webkit-scrollbar-track{background:#F5EFE6}
+</style>
+</head>
+<!-- PEXELS: Fotos via Pexels API https://www.pexels.com/api/documentation/ - Justificativas Hero: 6802983 gatilhos, 1181686 Ana, 2379004 Rafael -->
+<body class="bg-creme text-espresso font-inter antialiased selection:bg-gold/30">
+<div class="fixed top-0 left-0 h-[3px] bg-gold z-[60]" id="progress" style="width:0%"></div>
+<nav class="fixed top-0 w-full z-50 glass bg-creme/70 border-b border-gold/10">
+<div class="max-w-[1280px] mx-auto px-6 lg:px-8 h-[64px] flex items-center justify-between">
+<div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-espresso text-gold flex items-center justify-center font-playfair font-bold">GV</div><div><p class="font-playfair font-bold leading-none">Grão Vivo</p><p class="text-[11px] tracking-[0.18em] text-mocha/60 uppercase">Justificativas • Atv2 • S1/S2</p></div></div>
+<div class="hidden md:flex items-center gap-6 text-sm"><a href="analisecompleta.html" class="hover:text-gold transition">Análise Personas</a><a href="#gatilhos" class="hover:text-gold transition">Gatilhos</a><a href="#calendario" class="hover:text-gold transition">Calendário</a><a href="#justificativa" class="hover:text-gold transition">S1/S2</a><button onclick="document.getElementById('prompts-modal').showModal()" class="px-4 py-2 rounded-full bg-espresso text-creme hover:bg-mocha transition">Prompts</button></div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="relative min-h-[72vh] flex items-end overflow-hidden pt-[64px]">
+<img src="https://images.pexels.com/photos/320607/pexels-photo-320607.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Gatilhos neuromarketing café" class="absolute inset-0 w-full h-full object-cover">
+<div class="absolute inset-0 hero-overlay"></div>
+<div class="relative max-w-[1280px] mx-auto px-6 lg:px-8 pb-12 w-full">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-creme/10 border border-creme/20 text-creme text-xs tracking-widest uppercase glass" data-aos="fade-down"><span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span> Atividade 2 • Neuromarketing e Calendário • 14h-16h</div>
+<h1 class="font-playfair font-extrabold text-creme text-[38px] lg:text-[56px] leading-[0.95] mt-6" data-aos="fade-up">Justificativas:<br><span class="text-gold italic">Gatilhos & Calendário</span></h1>
+<p class="text-creme/80 max-w-[620px] mt-4 leading-relaxed" data-aos="fade-up" data-aos-delay="100">Por que <strong class="text-creme">Dopamina → Reciprocidade/Ancoragem → Escassez</strong> convertem onde ficha técnica falhou. 2 personas (Ana 34, Rafael 38) • 7 gatilhos S1/S2 • 3 postagens IG/WhatsApp/feira para <strong class="text-gold">+20% em 7 dias</strong>.</p>
+<div class="flex gap-3 mt-6" data-aos="fade-up" data-aos-delay="200"><a href="#gatilhos" class="px-7 py-3 rounded-full bg-gold text-espresso font-semibold hover:bg-caramel transition">Ver gatilhos →</a><a href="#calendario" class="px-7 py-3 rounded-full bg-creme/10 border border-creme/20 text-creme glass">Calendário 3 posts</a></div>
+</div>
+</section>
+
+<div class="bg-espresso text-creme/80 overflow-hidden border-y border-gold/20"><div class="flex ticker whitespace-nowrap py-3 text-sm"><span class="mx-8">Dopamina S1 → Quiz 30s</span><span class="mx-8 text-gold">•</span><span class="mx-8">Prova social S1 → 4.8⭐ 127</span><span class="mx-8 text-gold">•</span><span class="mx-8">Reciprocidade S1 → Kit 3×50g</span><span class="mx-8 text-gold">•</span><span class="mx-8">Ancoragem S2 → R$55→R$45</span><span class="mx-8 text-gold">•</span><span class="mx-8">Escassez S1 → 40un</span><span class="mx-8 text-gold">•</span><span class="mx-8">Identidade S1 → Vale do Ribeira</span><span class="mx-8 text-gold">•</span></div></div>
+
+<!-- GATILHOS -->
+<section id="gatilhos" class="max-w-[1280px] mx-auto px-6 lg:px-8 py-16">
+<div class="text-center max-w-[760px] mx-auto" data-aos="fade-up"><p class="text-gold text-xs tracking-[0.2em] uppercase font-bold">Entregável a) • CC-a/b • ≥3 gatilhos por persona</p><h2 class="font-playfair text-[36px] leading-none mt-2">Gatilhos por persona<br><span class="italic text-mocha">e funil (S1/S2)</span></h2><p class="text-mocha/70 mt-3">Matriz 2×3 — Sistema 1 (emo, rápido) vs Sistema 2 (rac, lento) — reaproveitando Ana e Rafael Atv1.</p></div>
+
+<div class="mt-10 overflow-x-auto">
+<table class="w-full text-sm bg-white rounded-2xl overflow-hidden gold-border creme-glow" data-aos="fade-up">
+<thead class="bg-espresso text-creme text-xs uppercase tracking-widest"><tr><th class="p-4 text-left">Persona</th><th class="p-4">Topo (descoberta)</th><th class="p-4">Meio (consideração)</th><th class="p-4">Fundo (decisão)</th><th class="p-4">S1/S2</th></tr></thead>
+<tbody class="divide-y divide-gold/10">
+<tr class="hover:bg-creme/50"><td class="p-4 font-semibold">Ana Clara 34<br><span class="text-xs text-mocha/60">“não sei qual combina”</span></td><td class="p-4"><span class="px-3 py-1 rounded-full bg-gold/15 text-espresso text-xs font-bold">Dopamina S1</span><br><span class="text-xs">Quiz 30s Reels</span></td><td class="p-4"><span class="px-3 py-1 rounded-full bg-vale/10 text-vale text-xs font-bold">Reciprocidade S1</span><br><span class="text-xs">Kit 3×50g frete grátis</span></td><td class="p-4"><span class="px-3 py-1 rounded-full bg-mocha text-creme text-xs">Escassez S1</span><br><span class="text-xs">Lote 40un feira</span></td><td class="p-4 text-xs font-mono">S1,S1,S1</td></tr>
+<tr class="hover:bg-creme/50"><td class="p-4 font-semibold">Rafael 38<br><span class="text-xs text-mocha/60">“vale a pena? prova”</span></td><td class="p-4"><span class="px-3 py-1 rounded-full bg-gold/15 text-xs font-bold">Prova social S1</span><br><span class="text-xs">Carrossel 4.8⭐</span></td><td class="p-4"><span class="px-3 py-1 rounded-full bg-creme2 border text-xs font-bold">Ancoragem S2→S1</span><br><span class="text-xs">R$55→R$45 vs R$38</span></td><td class="p-4"><span class="px-3 py-1 rounded-full bg-espresso text-gold text-xs">Urgência+Identidade S1</span><br><span class="text-xs">Até domingo, Vale</span></td><td class="p-4 text-xs font-mono">S1,S2→S1,S1</td></tr>
+</tbody>
+</table>
+</div>
+<p class="text-xs text-mocha/50 font-mono mt-3 text-center">7 gatilhos únicos • CC-a S1/S2 correto • CC-b ≥3 distintos • Fonte: gatilhos/gatilhos-matriz-geral.md</p>
+<div class="grid md:grid-cols-2 gap-6 mt-8">
+<div class="rounded-2xl bg-white p-6 gold-border" data-aos="fade-right"><p class="font-playfair font-bold">Ana — Só S1</p><p class="text-sm text-mocha/70 mt-2">Indecisão emocional = precisa dopamina (surpresa quiz), reciprocidade (presente kit), escassez (medo perder). Racionais não convertem aqui.</p><div class="mt-3 h-[180px]"><canvas id="chartS1Ana"></canvas></div></div>
+<div class="rounded-2xl bg-white p-6 gold-border" data-aos="fade-left"><p class="font-playfair font-bold">Rafael — S1 + S2→S1</p><p class="text-sm text-mocha/70 mt-2">Precisa prova S1 + racionalizar valor S2 (ancoragem R$55→R$45) para então urgência S1 fechar.</p><div class="mt-3 h-[180px]"><canvas id="chartS1Rafael"></canvas></div></div>
+</div>
+</section>
+
+<!-- CALENDARIO -->
+<section id="calendario" class="bg-creme2/40 border-y border-gold/10">
+<div class="max-w-[1280px] mx-auto px-6 lg:px-8 py-16">
+<div class="text-center max-w-[760px] mx-auto" data-aos="fade-up"><p class="text-gold text-xs tracking-[0.2em] uppercase font-bold">Entregável b) • CC-c • 3 postagens</p><h2 class="font-playfair text-[36px] leading-none mt-2">Calendário — 3 postagens<br><span class="italic text-mocha">semana de lançamento</span></h2><p class="text-mocha/70 mt-3">Canal (IG/WhatsApp/feira) + funil + gatilho coerentes — Quadro 2.</p></div>
+<div class="mt-10 grid lg:grid-cols-3 gap-6">
+<div class="rounded-[24px] bg-white p-6 gold-border creme-glow hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
+<p class="text-gold text-xs tracking-widest uppercase font-bold">Post 01 • Seg 01/09 18h • Topo</p><h3 class="font-playfair font-bold mt-1">Reels Quiz Dopamina</h3><p class="text-xs font-mono text-vale mt-1">IG Reels 15s • Dopamina S1 + Prova S1 • Ana+Rafael</p><p class="text-sm text-mocha/70 mt-3">“Qual Grão Vivo é você? 30s” + selo 4.8⭐ 127 — tira paralisia.</p><p class="text-xs font-mono mt-3">Métrica: Views, CTR quiz &gt;12%</p>
+</div>
+<div class="rounded-[24px] bg-white p-6 gold-border creme-glow hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
+<p class="text-gold text-xs tracking-widest uppercase font-bold">Post 02 • Qua 03/09 19h • Meio</p><h3 class="font-playfair font-bold mt-1">Carrossel Reciprocidade/Ancoragem</h3><p class="text-xs font-mono text-vale mt-1">IG Carrossel 4 cards + WhatsApp • S1+S2→S1</p><p class="text-sm text-mocha/70 mt-3">De R$55 por R$45 + kit 3×50g frete grátis — ancora + presente.</p><p class="text-xs font-mono mt-3">Métrica: Cliques, tempo página &gt;45s</p>
+</div>
+<div class="rounded-[24px] bg-white p-6 gold-border creme-glow hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="300">
+<p class="text-gold text-xs tracking-widest uppercase font-bold">Post 03 • Sáb 06/09 08h • Fundo</p><h3 class="font-playfair font-bold mt-1">WhatsApp + Feira Escassez</h3><p class="text-xs font-mono text-vale mt-1">WhatsApp broadcast + Feira • Escassez S1 + Identidade S1</p><p class="text-sm text-mocha/70 mt-3">“Lote 40un até domingo 12h — retira feira — Vale do Ribeira”</p><p class="text-xs font-mono mt-3">Métrica: Conversão fundo, retiradas, +20%</p>
+</div>
+</div>
+<div class="mt-8 h-[280px] bg-white rounded-2xl p-6 gold-border"><canvas id="chartCalendario"></canvas></div>
+</div>
+</section>
+
+<!-- JUSTIFICATIVA S1/S2 -->
+<section id="justificativa" class="max-w-[1280px] mx-auto px-6 lg:px-8 py-16">
+<div class="grid lg:grid-cols-2 gap-8">
+<div data-aos="fade-right"><p class="text-gold text-xs tracking-[0.2em] uppercase font-bold">Entregável d) • Justificativa S1/S2</p><h2 class="font-playfair text-[32px] leading-none mt-2">Por que S1<br><span class="italic text-mocha">converte onde S2 falhou?</span></h2><div class="mt-6 p-6 rounded-2xl bg-white gold-border leading-relaxed text-sm">
+<p>Os anúncios de teste usaram só <strong>Sistema 2</strong> (ficha técnica torra 180°C, nota 84, R$45 vs R$38) e converteram pouco no fundo porque exigem esforço cognitivo e não geram emoção para decidir.</p>
+<p class="mt-3">Os gatilhos propostos ativam <strong>Sistema 1</strong> (rápido, automático, emocional): <strong>Dopamina</strong> (quiz surpresa) no topo gera atenção S1 para Ana; <strong>Prova social</strong> S1 no topo valida Rafael sem cálculo; <strong>Reciprocidade</strong> S1 (kit) cria obrigação emocional no meio; <strong>Escassez/Urgência/Identidade</strong> S1 no fundo pressiona decisão rápida; <strong>Ancoragem</strong> S2→S1 racionaliza R$55→R$45 para Rafael mas ancora alívio S1.</p>
+<p class="mt-3">A sequência <strong>topo S1 → meio S1+S2→S1 → fundo S1</strong> conduz Ana (curadoria) e Rafael (valor) do S1 atenção ao S1 ação, corrigindo o erro de só S2 no fundo e aumentando conversão rumo à meta <strong>+20%</strong> — validado por CTR quiz, tempo página e conversão fundo.</p>
+</div><p class="text-xs font-mono text-mocha/50 mt-2">Fonte: templates/justificativa-s1-s2.md • Aula Carneiro 2026 S1/S2 + gatilhos</p></div>
+<div data-aos="fade-left"><div class="rounded-2xl bg-white p-6 gold-border"><p class="font-playfair font-bold">S1 vs S2 no funil</p><div class="h-[220px] mt-4"><canvas id="chartS1S2"></canvas></div><p class="text-xs text-mocha/50 font-mono mt-2">S1 domina topo/fundo; S2 só no meio (ancoragem) para Rafael</p></div><div class="mt-6 rounded-2xl bg-vale text-creme p-6"><p class="font-semibold">Risco ético — persuasão vs manipulação</p><p class="text-sm text-creme/80 mt-2">Escassez real (40 unidades, até domingo) = persuasão ética. Criar falsa escassez (“últimas 5” com 200 em estoque) = manipulação — não fazer. `TABLE 3` desejável b.</p></div></div>
+</div>
+<div class="mt-8 flex gap-3 justify-center"><a href="analisecompleta.html" class="px-7 py-3 rounded-full bg-espresso text-creme font-semibold hover:bg-mocha transition">← Ver Análise Personas</a><button onclick="document.getElementById('prompts-modal').showModal()" class="px-7 py-3 rounded-full bg-gold text-espresso font-semibold hover:bg-caramel transition">Ver prompts ocultos</button></div>
+</section>
+
+<footer class="bg-espresso text-creme/60 text-xs py-8 border-t border-gold/10"><div class="max-w-[1280px] mx-auto px-6 lg:px-8 flex justify-between gap-4"><p>Grão Vivo • Atv2 Neuromarketing • Pexels API <a href="https://www.pexels.com/api/documentation/" class="underline decoration-gold/50">pexels.com</a></p><p>Atividade_2_Aluno_Neuromarketing_e_Calendario_de_Conteudo.docx • 2026</p></div></footer>
+
+<dialog id="prompts-modal" class="p-0 rounded-[20px] max-w-[860px] w-[92%] backdrop:bg-espresso/60"><div class="bg-creme text-espresso"><div class="p-6 border-b border-gold/10 flex justify-between"><div><p class="text-gold text-xs tracking-widest uppercase font-bold">Área oculta • CC-d</p><h3 class="font-playfair text-xl font-bold">Prompts Atv2 — Gatilhos & Calendário</h3></div><button onclick="this.closest('dialog').close()" class="w-9 h-9 rounded-full bg-espresso text-creme">✕</button></div><div class="p-6 max-h-[65vh] overflow-auto space-y-3 text-sm"><details open class="rounded-xl bg-white p-4 gold-border"><summary class="font-semibold">Prompt 13 — Gatilhos</summary><pre class="mt-2 p-3 bg-creme rounded text-xs font-mono whitespace-pre-wrap">produza os gatilhos para cada persona criada em '.../docs/entregaveis/personas' salvando-os em '.../docs/entregaveis/gatilhos'</pre></details><details class="rounded-xl bg-white p-4 gold-border"><summary class="font-semibold">Prompt 14 — Calendário</summary><pre class="mt-2 p-3 bg-creme rounded text-xs font-mono whitespace-pre-wrap">Agora crie os calendários em '.../docs/entregaveis/calendario'</pre></details><a href="registro-prompts.md" target="_blank" class="inline-flex px-5 py-2 rounded-full bg-espresso text-creme text-xs font-semibold">Abrir registro completo →</a></div></div></dialog>
+
+<script>AOS.init({once:true,duration:700});window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;document.getElementById('progress').style.width=scrollY/h*100+'%'});Chart.defaults.font.family='Inter';
+new Chart(document.getElementById('chartS1Ana'),{type:'doughnut',data:{labels:['S1 Dopamina','S1 Reciprocidade','S1 Escassez'],datasets:[{data:[1,1,1],backgroundColor:['#C9A86A','#D5A373','#3C2A21'],borderWidth:0}]},options:{plugins:{legend:{position:'bottom',labels:{boxWidth:12}}},cutout:'60%'}});
+new Chart(document.getElementById('chartS1Rafael'),{type:'doughnut',data:{labels:['S1 Prova','S2→S1 Ancoragem','S1 Urgência'],datasets:[{data:[1,1,1],backgroundColor:['#C9A86A','#E8DDD0','#1A120B'],borderWidth:0}]},options:{plugins:{legend:{position:'bottom'}},cutout:'60%'}});
+new Chart(document.getElementById('chartCalendario'),{type:'bar',data:{labels:['Post1 Topo','Post2 Meio','Post3 Fundo'],datasets:[{label:'S1 intensidade',data:[9,6,9],backgroundColor:['#C9A86A','#E8DDD0','#1A120B'],borderRadius:8},{label:'S2 intensidade',data:[1,7,1],backgroundColor:['#2E4A3A'] ,borderRadius:8}]},options:{plugins:{legend:{position:'bottom'}},scales:{y:{beginAtZero:true,max:10}}}});
+new Chart(document.getElementById('chartS1S2'),{type:'radar',data:{labels:['Dopamina','Prova','Reciprocidade','Ancoragem','Escassez'],datasets:[{label:'S1 (emo)',data:[9,9,9,2,9],borderColor:'#C9A86A',backgroundColor:'rgba(201,168,106,0.2)'},{label:'S2 (rac)',data:[1,1,1,9,1],borderColor:'#2E4A3A',backgroundColor:'rgba(46,74,58,0.15)'}]},options:{scales:{r:{grid:{color:'#E8DDD0'}}}}});
+</script>
+</body>
+</html>
