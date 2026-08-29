@@ -37,18 +37,30 @@ tailwind.config = {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <style>
   html { scroll-behavior: smooth; }
-  .glass { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+  .glass { backdrop-filter: blur(16px) saturate(180%); -webkit-backdrop-filter: blur(16px) saturate(180%); }
   .gold-border { border: 1px solid rgba(201,168,106,0.18); }
   .text-balance { text-wrap: balance; }
   .hero-overlay { background: linear-gradient(180deg, rgba(26,18,11,0.55) 0%, rgba(26,18,11,0.85) 75%, #1A120B 100%); }
   .creme-glow { box-shadow: 0 20px 60px rgba(60,42,33,0.08); }
+  .creme-glow-hover:hover { box-shadow: 0 24px 80px rgba(60,42,33,0.12); }
   .ticker { animation: ticker 28s linear infinite; }
   @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   .magnetic { transition: transform 0.2s ease; }
+  .shimmer { background: linear-gradient(90deg, #F5EFE6 0%, #FAF5F0 50%, #F5EFE6 100%); background-size: 200% 100%; animation: shimmer 2s infinite; }
+  @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+  .fade-in-up { animation: fadeInUp 0.6s ease-out forwards; opacity: 0; transform: translateY(20px); }
+  @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
   /* scrollbar */
   ::-webkit-scrollbar { width: 8px; height: 8px; }
-  ::-webkit-scrollbar-thumb { background: #C9A86A; border-radius: 999px; }
+  ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #C9A86A, #D5A373); border-radius: 999px; }
   ::-webkit-scrollbar-track { background: #F5EFE6; }
+  /* focus states */
+  *:focus-visible { outline: 2px solid #C9A86A; outline-offset: 2px; }
+  /* selection */
+  ::selection { background: rgba(201,168,106,0.3); color: #1A120B; }
+  /* smooth image loading */
+  img { transition: opacity 0.3s ease; }
+  img:not([src]) { opacity: 0; }
 </style>
 </head>
 <!-- PEXELS: Fotos via Pexels API https://www.pexels.com/api/documentation/
@@ -62,79 +74,79 @@ tailwind.config = {
   <!-- progress -->
   <div class="fixed top-0 left-0 h-[3px] bg-gold z-[60] transition-all" id="progress" style="width:0%"></div>
   <!-- nav -->
-  <nav class="fixed top-0 w-full z-50 glass bg-creme/70 border-b border-gold/10">
-    <div class="max-w-[1280px] mx-auto px-6 lg:px-8 h-[64px] flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-full bg-espresso text-gold flex items-center justify-center font-playfair font-bold">GV</div>
+  <nav class="fixed top-0 w-full z-50 glass bg-creme/80 border-b border-gold/10 transition-all duration-300" id="navbar">
+    <div class="max-w-[1280px] mx-auto px-6 lg:px-8 h-[72px] flex items-center justify-between">
+      <div class="flex items-center gap-3 group cursor-pointer">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-espresso to-mocha text-gold flex items-center justify-center font-playfair font-bold shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">GV</div>
         <div>
-          <p class="font-playfair font-bold leading-none">Grão Vivo</p>
-          <p class="text-[11px] tracking-[0.18em] text-mocha/60 uppercase">Torra Média Premium • 2026</p>
+          <p class="font-playfair font-bold leading-none tracking-tight">Grão Vivo</p>
+          <p class="text-[10px] tracking-[0.2em] text-mocha/60 uppercase">Torra Média Premium • 2026</p>
         </div>
       </div>
-      <div class="hidden md:flex items-center gap-7 text-sm">
-        <a href="#desafio" class="hover:text-gold transition">Desafio</a>
-        <a href="#personas" class="hover:text-gold transition">Personas</a>
-        <a href="#jornadas" class="hover:text-gold transition">Jornadas</a>
-        <a href="#propostas" class="hover:text-gold transition">Propostas</a>
-        <a href="#vault" class="hover:text-gold transition">Vault IA</a>
-        <button onclick="document.getElementById('prompts-modal').showModal()" class="px-4 py-2 rounded-full bg-espresso text-creme text-sm hover:bg-mocha transition">Prompts</button>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#desafio" class="hover:text-gold transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gold after:transition-all hover:after:w-full">Desafio</a>
+        <a href="#personas" class="hover:text-gold transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gold after:transition-all hover:after:w-full">Personas</a>
+        <a href="#jornadas" class="hover:text-gold transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gold after:transition-all hover:after:w-full">Jornadas</a>
+        <a href="#propostas" class="hover:text-gold transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gold after:transition-all hover:after:w-full">Propostas</a>
+        <a href="#vault" class="hover:text-gold transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gold after:transition-all hover:after:w-full">Vault IA</a>
+        <button onclick="document.getElementById('prompts-modal').showModal()" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-espresso to-mocha text-creme text-sm hover:shadow-lg hover:scale-105 transition-all duration-300 font-medium">Prompts</button>
       </div>
-      <button onclick="document.getElementById('prompts-modal').showModal()" class="md:hidden w-9 h-9 rounded-full bg-espresso text-creme flex items-center justify-center">≡</button>
+      <button onclick="document.getElementById('prompts-modal').showModal()" class="md:hidden w-10 h-10 rounded-full bg-gradient-to-br from-espresso to-mocha text-creme flex items-center justify-center shadow-lg">≡</button>
     </div>
   </nav>
 
   <!-- HERO - Foto Pexels 6802983 -->
-  <section class="relative min-h-[92vh] flex items-end overflow-hidden pt-[64px]">
+  <section class="relative min-h-[92vh] flex items-end overflow-hidden pt-[72px]">
     <img src="https://images.pexels.com/photos/6802983/pexels-photo-6802983.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Café especial torrado — Foto Pexels 6802983" class="absolute inset-0 w-full h-full object-cover" loading="eager">
     <div class="absolute inset-0 hero-overlay"></div>
     <div class="absolute inset-0 opacity-[0.07]" style="background-image: radial-gradient(circle at 2px 2px, #C9A86A 1px, transparent 0); background-size: 32px 32px;"></div>
     <div class="relative max-w-[1280px] mx-auto px-6 lg:px-8 pb-14 lg:pb-20 w-full">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-creme/10 border border-creme/20 text-creme text-xs tracking-widest uppercase glass" data-aos="fade-down">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-creme/15 border border-creme/25 text-creme text-xs tracking-widest uppercase glass shadow-lg" data-aos="fade-down">
         <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span> SENAI-SP • Marketing Digital com IA • Atividade 1
       </div>
-      <h1 class="font-playfair font-extrabold text-creme text-[42px] lg:text-[68px] leading-[0.95] mt-6 text-balance" data-aos="fade-up" data-aos-delay="100">
+      <h1 class="font-playfair font-extrabold text-creme text-[48px] lg:text-[72px] leading-[0.95] mt-6 text-balance drop-shadow-2xl" data-aos="fade-up" data-aos-delay="100">
         Da persona<br><span class="text-gold italic font-playfair">à experiência</span><br>do cliente
       </h1>
-      <p class="text-creme/80 max-w-[560px] mt-5 text-[17px] leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-        Consultoria júnior para o lançamento da <strong class="text-creme">torra média premium</strong> da Grão Vivo.
-        2 personas frias • 2 jornadas 3 etapas • 3 propostas com dados e ML — para converter os <strong class="text-gold">60% que nunca comprou</strong> e bater <strong class="text-gold">+20% em 30 dias</strong>.
+      <p class="text-creme/85 max-w-[580px] mt-6 text-[18px] leading-relaxed drop-shadow-lg" data-aos="fade-up" data-aos-delay="200">
+        Consultoria júnior para o lançamento da <strong class="text-creme font-semibold">torra média premium</strong> da Grão Vivo.
+        2 personas frias • 2 jornadas 3 etapas • 3 propostas com dados e ML — para converter os <strong class="text-gold font-semibold">60% que nunca comprou</strong> e bater <strong class="text-gold font-semibold">+20% em 30 dias</strong>.
       </p>
-      <div class="flex flex-wrap gap-3 mt-8" data-aos="fade-up" data-aos-delay="300">
-        <a href="#personas" class="magnetic px-7 py-3 rounded-full bg-gold text-espresso font-semibold hover:bg-caramel transition">Ver personas →</a>
-        <a href="#jornadas" class="px-7 py-3 rounded-full bg-creme/10 border border-creme/20 text-creme glass hover:bg-creme/20 transition">Explorar jornadas</a>
+      <div class="flex flex-wrap gap-4 mt-10" data-aos="fade-up" data-aos-delay="300">
+        <a href="#personas" class="magnetic px-8 py-3.5 rounded-full bg-gradient-to-r from-gold to-caramel text-espresso font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">Ver personas →</a>
+        <a href="#jornadas" class="px-8 py-3.5 rounded-full bg-creme/15 border border-creme/25 text-creme glass hover:bg-creme/25 hover:scale-105 transition-all duration-300 font-medium">Explorar jornadas</a>
       </div>
-      <div class="grid grid-cols-3 gap-4 max-w-[520px] mt-10" data-aos="fade-up" data-aos-delay="400">
-        <div class="rounded-2xl bg-creme/10 border border-creme/15 glass p-4 text-center">
-          <p class="text-gold font-playfair text-2xl font-bold"><span class="counter" data-target="8200">0</span></p>
-          <p class="text-creme/60 text-xs uppercase tracking-widest">seguidores IG</p>
+      <div class="grid grid-cols-3 gap-4 max-w-[540px] mt-12" data-aos="fade-up" data-aos-delay="400">
+        <div class="rounded-2xl bg-creme/15 border border-creme/20 glass p-5 text-center creme-glow-hover hover:scale-105 transition-all duration-300">
+          <p class="text-gold font-playfair text-3xl font-bold"><span class="counter" data-target="8200">0</span></p>
+          <p class="text-creme/70 text-xs uppercase tracking-widest mt-1">seguidores IG</p>
         </div>
-        <div class="rounded-2xl bg-creme/10 border border-creme/15 glass p-4 text-center">
-          <p class="text-gold font-playfair text-2xl font-bold"><span class="counter" data-target="60">0</span>%</p>
-          <p class="text-creme/60 text-xs uppercase tracking-widest">nunca comprou</p>
+        <div class="rounded-2xl bg-creme/15 border border-creme/20 glass p-5 text-center creme-glow-hover hover:scale-105 transition-all duration-300">
+          <p class="text-gold font-playfair text-3xl font-bold"><span class="counter" data-target="60">0</span>%</p>
+          <p class="text-creme/70 text-xs uppercase tracking-widest mt-1">nunca comprou</p>
         </div>
-        <div class="rounded-2xl bg-creme/10 border border-creme/15 glass p-4 text-center">
-          <p class="text-gold font-playfair text-2xl font-bold">R$45</p>
-          <p class="text-creme/60 text-xs uppercase tracking-widest">ticket médio</p>
+        <div class="rounded-2xl bg-creme/15 border border-creme/20 glass p-5 text-center creme-glow-hover hover:scale-105 transition-all duration-300">
+          <p class="text-gold font-playfair text-3xl font-bold">R$45</p>
+          <p class="text-creme/70 text-xs uppercase tracking-widest mt-1">ticket médio</p>
         </div>
       </div>
-      <p class="text-creme/40 text-xs mt-6 font-mono">Gabriel Guimarães Carneiro • SENAI-SP Registro • 2026 • Quadro 2 literal</p>
+      <p class="text-creme/50 text-xs mt-8 font-mono">Gabriel Guimarães Carneiro • SENAI-SP Registro • 2026 • Quadro 2 literal</p>
     </div>
   </section>
 
   <!-- TICKER COMENTARIOS -->
-  <div class="bg-espresso text-creme/80 overflow-hidden border-y border-gold/20">
-    <div class="flex ticker whitespace-nowrap py-3 text-sm">
-      <span class="mx-8">“Sigo a página faz tempo, mas nunca sei qual café combina comigo.”</span>
-      <span class="mx-8 text-gold">•</span>
-      <span class="mx-8">“Vi um preço parecido em outro lugar e fiquei em dúvida se vale a pena aqui.”</span>
-      <span class="mx-8 text-gold">•</span>
-      <span class="mx-8">“Queria comprar, mas não vi ninguém comentando se é bom.”</span>
-      <span class="mx-8 text-gold">•</span>
-      <span class="mx-8">“Mandei mensagem no WhatsApp e demorou pra responder.”</span>
-      <span class="mx-8 text-gold">•</span>
-      <span class="mx-8">“Sigo a página faz tempo, mas nunca sei qual café combina comigo.”</span>
-      <span class="mx-8 text-gold">•</span>
-      <span class="mx-8">“Vi um preço parecido em outro lugar e fiquei em dúvida se vale a pena aqui.”</span>
+  <div class="bg-gradient-to-r from-espresso via-mocha to-espresso text-creme/80 overflow-hidden border-y border-gold/20 py-4">
+    <div class="flex ticker whitespace-nowrap text-sm font-medium">
+      <span class="mx-8 flex items-center gap-2"><span class="text-gold">❝</span>"Sigo a página faz tempo, mas nunca sei qual café combina comigo."</span>
+      <span class="mx-8 text-gold opacity-50">●</span>
+      <span class="mx-8 flex items-center gap-2"><span class="text-gold">❝</span>"Vi um preço parecido em outro lugar e fiquei em dúvida se vale a pena aqui."</span>
+      <span class="mx-8 text-gold opacity-50">●</span>
+      <span class="mx-8 flex items-center gap-2"><span class="text-gold">❝</span>"Queria comprar, mas não vi ninguém comentando se é bom."</span>
+      <span class="mx-8 text-gold opacity-50">●</span>
+      <span class="mx-8 flex items-center gap-2"><span class="text-gold">❝</span>"Mandei mensagem no WhatsApp e demorou pra responder."</span>
+      <span class="mx-8 text-gold opacity-50">●</span>
+      <span class="mx-8 flex items-center gap-2"><span class="text-gold">❝</span>"Sigo a página faz tempo, mas nunca sei qual café combina comigo."</span>
+      <span class="mx-8 text-gold opacity-50">●</span>
+      <span class="mx-8 flex items-center gap-2"><span class="text-gold">❝</span>"Vi um preço parecido em outro lugar e fiquei em dúvida se vale a pena aqui."</span>
     </div>
   </div>
 
@@ -588,6 +600,17 @@ tailwind.config = {
   });
   // gsap parallax hero
   gsap.to('.hero-overlay', { scrollTrigger:{ trigger:'section', start:'top top', end:'bottom top', scrub:true }, opacity:0.95 });
+  // navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      nav.classList.add('shadow-lg');
+      nav.style.background = 'rgba(245,239,230,0.95)';
+    } else {
+      nav.classList.remove('shadow-lg');
+      nav.style.background = 'rgba(245,239,230,0.8)';
+    }
+  });
 </script>
 <!-- PEXELS API dynamic loader (opcional) -->
   <script>
